@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="flex flex-col items-center pb-40">
+      <main className="flex flex-col items-center pb-28">
         <section className="flex items-center gap-32 pt-40">
           <div className="flex flex-col items-start gap-10">
             <div>
@@ -100,7 +100,6 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-          
         </section>
       </main>
       <Footer />
