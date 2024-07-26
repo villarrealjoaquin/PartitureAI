@@ -1,4 +1,12 @@
-function GraphicCard({ className, width, height }: { className: string, width: string, height: string }) {
+function GraphicCard({
+  className,
+  width,
+  height,
+}: {
+  className: string;
+  width: string;
+  height: string;
+}) {
   return (
     <svg
       width={width}
