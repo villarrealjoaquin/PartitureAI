@@ -1,4 +1,4 @@
-import { CpuIcon } from "./cpu";
+import { CpuIcon } from "./Cpu";
 import { MotherboardIcon } from "./Motherboard";
 import { CoolerIcon } from "./Cooler";
 import { MemoryRamIcon } from "./MemoryRam";
