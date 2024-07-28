@@ -593,7 +593,7 @@
       "read_speed": "3500 MB/s",
       "write_speed": "3300 MB/s",
       "price": 169.99,
-      "image": "https://example.com/images/samsung_970_evo_plus_1tb.jpg"
+      "image": "/storage/samsung970evo.png"
     },
     {
       "id": 2,
@@ -605,7 +605,7 @@
       "read_speed": "3430 MB/s",
       "write_speed": "3000 MB/s",
       "price": 149.99,
-      "image": "https://example.com/images/wd_black_sn750_1tb.jpg"
+      "image": "/storage/WD_BLACK.png"
     },
     {
       "id": 3,
@@ -617,7 +617,7 @@
       "read_speed": "560 MB/s",
       "write_speed": "510 MB/s",
       "price": 99.99,
-      "image": "https://example.com/images/crucial_mx500_1tb.jpg"
+      "image": "/storage/ssdCrucial.png"
     },
     {
       "id": 4,
@@ -629,7 +629,7 @@
       "read_speed": "220 MB/s",
       "write_speed": "220 MB/s",
       "price": 54.99,
-      "image": "https://example.com/images/seagate_barracuda_2tb.jpg"
+      "image": "/storage/barracuda2tb.png"
     },
     {
       "id": 5,
@@ -641,7 +641,7 @@
       "read_speed": "2200 MB/s",
       "write_speed": "2000 MB/s",
       "price": 124.99,
-      "image": "https://example.com/images/kingston_a2000_1tb.jpg"
+      "image": "/storage/kingston.png"
     },
     {
       "id": 6,
@@ -653,7 +653,7 @@
       "read_speed": "550 MB/s",
       "write_speed": "520 MB/s",
       "price": 69.99,
-      "image": "https://example.com/images/samsung_860_evo_500gb.jpg"
+      "image": "/storage/samsung860.png"
     },
     {
       "id": 7,
@@ -665,7 +665,7 @@
       "read_speed": "150 MB/s",
       "write_speed": "150 MB/s",
       "price": 49.99,
-      "image": "https://example.com/images/wd_blue_1tb.jpg"
+      "image": "/storage/wdBlue.png"
     },
     {
       "id": 8,
@@ -677,7 +677,7 @@
       "read_speed": "3400 MB/s",
       "write_speed": "2800 MB/s",
       "price": 179.99,
-      "image": "https://example.com/images/sandisk_extreme_pro_1tb.jpg"
+      "image": "/storage/ssdSandisk.png"
     },
     {
       "id": 9,
@@ -689,7 +689,7 @@
       "read_speed": "2000 MB/s",
       "write_speed": "1700 MB/s",
       "price": 109.99,
-      "image": "https://example.com/images/crucial_p1_1tb.jpg"
+      "image": "/storage/crucialssd1tb.png"
     },
     {
       "id": 10,
@@ -701,7 +701,7 @@
       "read_speed": "200 MB/s",
       "write_speed": "200 MB/s",
       "price": 99.99,
-      "image": "https://example.com/images/toshiba_x300_4tb.jpg"
+      "image": "/storage/ssdToshiba.png"
     },
     {
       "id": 11,
@@ -713,7 +713,7 @@
       "read_speed": "560 MB/s",
       "write_speed": "520 MB/s",
       "price": 89.99,
-      "image": "https://example.com/images/adata_su800_1tb.jpg"
+      "image": "/storage/ssdAdata.png"
     },
     {
       "id": 12,
@@ -725,7 +725,7 @@
       "read_speed": "120 MB/s",
       "write_speed": "120 MB/s",
       "price": 74.99,
-      "image": "https://example.com/images/wd_my_passport_2tb.jpg"
+      "image": "/storage/ssdWesternBlack.png"
     }
   ],
   "power_supplies": [
@@ -737,7 +737,7 @@
       "efficiency_rating": "80+ Gold",
       "modularity": "Fully Modular",
       "price": 129.99,
-      "image": "https://example.com/images/corsair_rm850x.jpg"
+      "image": "/powerSupplies/psCorsair500.png"
     },
     {
       "id": 2,
@@ -747,7 +747,7 @@
       "efficiency_rating": "80+ Gold",
       "modularity": "Fully Modular",
       "price": 119.99,
-      "image": "https://example.com/images/evga_supernova_750_g5.jpg"
+      "image": "/powerSupplies/psEvga600w.png"
     },
     {
       "id": 3,
@@ -757,7 +757,7 @@
       "efficiency_rating": "80+ Gold",
       "modularity": "Fully Modular",
       "price": 99.99,
-      "image": "https://example.com/images/seasonic_focus_gx-650.jpg"
+      "image": "/powerSupplies/psSeasonic.png"
     },
     {
       "id": 4,
@@ -767,7 +767,7 @@
       "efficiency_rating": "80+ Gold",
       "modularity": "Fully Modular",
       "price": 89.99,
-      "image": "https://example.com/images/cooler_master_mwe_gold_650.jpg"
+      "image": "/powerSupplies/psCoolermaster.png"
     },
     {
       "id": 5,
@@ -777,77 +777,47 @@
       "efficiency_rating": "80+ Gold",
       "modularity": "Fully Modular",
       "price": 139.99,
-      "image": "https://example.com/images/thermaltake_toughpower_gf1_850w.jpg"
+      "image": "/powerSupplies/psThermaltake.png"
     },
     {
       "id": 6,
-      "name": "NZXT C750",
-      "manufacturer": "NZXT",
-      "wattage": "750W",
-      "efficiency_rating": "80+ Gold",
-      "modularity": "Fully Modular",
-      "price": 114.99,
-      "image": "https://example.com/images/nzxt_c750.jpg"
-    },
-    {
-      "id": 7,
-      "name": "be quiet! Straight Power 11 750W",
-      "manufacturer": "be quiet!",
-      "wattage": "750W",
-      "efficiency_rating": "80+ Platinum",
-      "modularity": "Fully Modular",
-      "price": 159.99,
-      "image": "https://example.com/images/be_quiet_straight_power_11_750w.jpg"
-    },
-    {
-      "id": 8,
       "name": "Corsair CX550M",
       "manufacturer": "Corsair",
       "wattage": "550W",
       "efficiency_rating": "80+ Bronze",
       "modularity": "Semi Modular",
       "price": 69.99,
-      "image": "https://example.com/images/corsair_cx550m.jpg"
+      "image": "/powerSupplies/psCorsair550.png"
     },
     {
-      "id": 9,
+      "id": 7,
       "name": "EVGA 600 W1",
       "manufacturer": "EVGA",
       "wattage": "600W",
       "efficiency_rating": "80+ White",
       "modularity": "Non Modular",
       "price": 49.99,
-      "image": "https://example.com/images/evga_600_w1.jpg"
+      "image": "/powerSupplies/psEvga600w.png"
     },
     {
-      "id": 10,
-      "name": "Seasonic Prime TX-850",
-      "manufacturer": "Seasonic",
-      "wattage": "850W",
-      "efficiency_rating": "80+ Titanium",
-      "modularity": "Fully Modular",
-      "price": 229.99,
-      "image": "https://example.com/images/seasonic_prime_tx-850.jpg"
-    },
-    {
-      "id": 11,
+      "id": 8,
       "name": "Cooler Master V750",
       "manufacturer": "Cooler Master",
       "wattage": "750W",
       "efficiency_rating": "80+ Gold",
       "modularity": "Fully Modular",
       "price": 109.99,
-      "image": "https://example.com/images/cooler_master_v750.jpg"
+      "image": "/powerSupplies/psCoolermaster600.png"
     },
     {
-      "id": 12,
+      "id": 9,
       "name": "Thermaltake Smart 600W",
       "manufacturer": "Thermaltake",
       "wattage": "600W",
       "efficiency_rating": "80+ White",
       "modularity": "Non Modular",
       "price": 49.99,
-      "image": "https://example.com/images/thermaltake_smart_600w.jpg"
+      "image": "/powerSupplies/psThermaltakeSmart.png"
     }
   ],
   "cases": [
@@ -858,7 +828,7 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 69.99,
-      "image": "https://example.com/images/nzxt_h510.jpg"
+      "image": "/cases/caseNZXTH510.png"
     },
     {
       "id": 2,
@@ -867,7 +837,7 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 79.99,
-      "image": "https://example.com/images/corsair_4000d_airflow.jpg"
+      "image": "/cases/caseCorsair4000D.png"
     },
     {
       "id": 3,
@@ -876,7 +846,7 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 89.99,
-      "image": "https://example.com/images/fractal_design_meshify_c.jpg"
+      "image": "/cases/caseMesifyC.png"
     },
     {
       "id": 4,
@@ -885,7 +855,7 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 59.99,
-      "image": "https://example.com/images/phanteks_eclipse_p300a.jpg"
+      "image": "/cases/caseEclipseP300A.png"
     },
     {
       "id": 5,
@@ -894,7 +864,7 @@
       "form_factor": "Micro ATX",
       "motherboard_support": "Micro ATX, Mini ITX",
       "price": 49.99,
-      "image": "https://example.com/images/cooler_master_masterbox_q300l.jpg"
+      "image": "/cases/caseCoolermasterQ300l.png"
     },
     {
       "id": 6,
@@ -903,7 +873,7 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX, EATX",
       "price": 129.99,
-      "image": "https://example.com/images/lian_li_pc-o11_dynamic.jpg"
+      "image": "/cases/caseLianli.png"
     },
     {
       "id": 7,
@@ -912,7 +882,7 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 149.99,
-      "image": "https://example.com/images/thermaltake_core_p3.jpg"
+      "image": "/cases/caseThermltakeP3.png"
     },
     {
       "id": 8,
@@ -921,7 +891,7 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 99.99,
-      "image": "https://example.com/images/be_quiet_pure_base_500dx.jpg"
+      "image": "/cases/caseBeQuiet.png"
     },
     {
       "id": 9,
@@ -930,7 +900,7 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 69.99,
-      "image": "https://example.com/images/antec_nx410.jpg"
+      "image": "/cases/caseNX410.png"
     },
     {
       "id": 10,
@@ -939,7 +909,7 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 99.99,
-      "image": "https://example.com/images/corsair_icue_220t_rgb.jpg"
+      "image": "/cases/caseCorsairIcue.png"
     },
     {
       "id": 11,
@@ -948,7 +918,7 @@
       "form_factor": "Mini ITX",
       "motherboard_support": "Mini ITX",
       "price": 79.99,
-      "image": "https://example.com/images/nzxt_h210.jpg"
+      "image": "/cases/caseNZXTH210.png"
     },
     {
       "id": 12,
@@ -957,7 +927,7 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 119.99,
-      "image": "https://example.com/images/cooler_master_mastercase_h500.jpg"
+      "image": "/cases/caseCoolerMasterH500.png"
     }
   ],
   "cooling_systems": [
@@ -968,7 +938,7 @@
       "type": "Liquid",
       "fan_size": "240mm",
       "price": 139.99,
-      "image": "https://example.com/images/corsair_h100i_rgb_platinum.jpg"
+      "image": "/coolers/corsairH100i.png"
     },
     {
       "id": 2,
@@ -977,7 +947,7 @@
       "type": "Air",
       "fan_size": "Dual 140mm",
       "price": 89.99,
-      "image": "https://example.com/images/noctua_nh-d15.jpg"
+      "image": "/coolers/noctuaNHD15.png"
     },
     {
       "id": 3,
@@ -986,7 +956,7 @@
       "type": "Liquid",
       "fan_size": "280mm",
       "price": 149.99,
-      "image": "https://example.com/images/nzxt_kraken_x63.jpg"
+      "image": "/coolers/nazctKraken.png"
     },
     {
       "id": 4,
@@ -995,7 +965,7 @@
       "type": "Air",
       "fan_size": "120mm",
       "price": 49.99,
-      "image": "https://example.com/images/cooler_master_hyper_212_rgb.jpg"
+      "image": "/coolers/coolermasterHyper212.png"
     },
     {
       "id": 5,
@@ -1004,7 +974,7 @@
       "type": "Air",
       "fan_size": "Dual 135mm",
       "price": 89.99,
-      "image": "https://example.com/images/be_quiet_dark_rock_pro_4.jpg"
+      "image": "/coolers/bequietDarkrock.png"
     },
     {
       "id": 6,
@@ -1013,7 +983,7 @@
       "type": "Liquid",
       "fan_size": "360mm",
       "price": 179.99,
-      "image": "https://example.com/images/corsair_icue_h150i_elite_capellix.jpg"
+      "image": "/coolers/corsairIcueH150i.png"
     },
     {
       "id": 7,
@@ -1022,7 +992,7 @@
       "type": "Air",
       "fan_size": "120mm",
       "price": 29.99,
-      "image": "https://example.com/images/deepcool_gammaxx_400.jpg"
+      "image": "/coolers/deepcoolGammax400.png"
     },
     {
       "id": 8,
@@ -1031,7 +1001,7 @@
       "type": "Liquid",
       "fan_size": "280mm",
       "price": 129.99,
-      "image": "https://example.com/images/evga_clc_280.jpg"
+      "image": "/coolers/evgaCLC280.png"
     },
     {
       "id": 9,
@@ -1040,7 +1010,7 @@
       "type": "Liquid",
       "fan_size": "360mm",
       "price": 199.99,
-      "image": "https://example.com/images/thermaltake_floe_triple_riing_rgb_360_tt.jpg"
+      "image": "/coolers/thermaltakeFloe.png"
     },
     {
       "id": 10,
@@ -1049,7 +1019,7 @@
       "type": "Liquid",
       "fan_size": "240mm",
       "price": 79.99,
-      "image": "https://example.com/images/cooler_master_masterliquid_ml240l_rgb.jpg"
+      "image": "/coolers/coolermasterML240L.png"
     },
     {
       "id": 11,
@@ -1058,7 +1028,7 @@
       "type": "Air",
       "fan_size": "92mm",
       "price": 39.99,
-      "image": "https://example.com/images/noctua_nh-l9i.jpg"
+      "image": "/coolers/noctuaNH-L9I.png"
     },
     {
       "id": 12,
@@ -1067,7 +1037,7 @@
       "type": "Liquid",
       "fan_size": "280mm",
       "price": 119.99,
-      "image": "https://example.com/images/arctic_liquid_freezer_ii_280.jpg"
+      "image": "/coolers/arcticLiquid280.png"
     }
   ]
 }
