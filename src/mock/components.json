@@ -9,7 +9,7 @@
       "boost_clock": "1710 MHz",
       "power_consumption": "320 W",
       "price": 699.99,
-      "image": "https://example.com/images/rtx3080.jpg"
+      "image": "/graphics_card/nvidia-geforce-rtx-3080.png"
     },
     {
       "id": 2,
@@ -20,7 +20,7 @@
       "boost_clock": "2250 MHz",
       "power_consumption": "300 W",
       "price": 649.99,
-      "image": "https://example.com/images/rx6800xt.jpg"
+      "image": "/graphics_card/amd-radeon-rx-6800-xt.png"
     },
     {
       "id": 3,
@@ -31,7 +31,7 @@
       "boost_clock": "1725 MHz",
       "power_consumption": "220 W",
       "price": 499.99,
-      "image": "https://example.com/images/rtx3070.jpg"
+      "image": "/graphics_card/nvidia-geforce-rtx-3070.png"
     },
     {
       "id": 4,
@@ -42,7 +42,7 @@
       "boost_clock": "2581 MHz",
       "power_consumption": "230 W",
       "price": 479.99,
-      "image": "https://example.com/images/rx6700xt.jpg"
+      "image": "/graphics_card/amd-radeon-rx-6700-xt.png"
     },
     {
       "id": 5,
@@ -53,62 +53,95 @@
       "boost_clock": "1665 MHz",
       "power_consumption": "200 W",
       "price": 399.99,
-      "image": "https://example.com/images/rtx3060ti.jpg"
+      "image": "/graphics_card/nvidia-geforce-rtx-3060-ti.png"
     },
     {
       "id": 6,
-      "name": "NVIDIA GeForce RTX 3080",
+      "name": "GeForce RTX™ 3080 Ti GAMING X TRIO 12G",
       "manufacturer": "NVIDIA",
       "memory": "10 GB GDDR6X",
       "base_clock": "1440 MHz",
       "boost_clock": "1710 MHz",
       "power_consumption": "320 W",
       "price": 699.99,
-      "image": "https://example.com/images/rtx3080.jpg"
+      "image": "/graphics_card/nvidia-geforce-rtx-3080-ti.png"
     },
     {
       "id": 7,
-      "name": "AMD Radeon RX 6800 XT",
+      "name": "NVIDIA GeForce RTX 3090",
+      "manufacturer": "NVIDIA",
+      "memory": "24 GB GDDR6X",
+      "base_clock": "1395 MHz",
+      "boost_clock": "1695 MHz",
+      "power_consumption": "350 W",
+      "price": 1499.99,
+      "image": "/graphics_card/nvidia-geforce-rtx-3090.png"
+    },
+    {
+      "id": 8,
+      "name": "AMD Radeon RX 6900 XT",
       "manufacturer": "AMD",
       "memory": "16 GB GDDR6",
       "base_clock": "1825 MHz",
       "boost_clock": "2250 MHz",
       "power_consumption": "300 W",
-      "price": 649.99,
-      "image": "https://example.com/images/rx6800xt.jpg"
-    },
-    {
-      "id": 8,
-      "name": "NVIDIA GeForce RTX 3070",
-      "manufacturer": "NVIDIA",
-      "memory": "8 GB GDDR6",
-      "base_clock": "1500 MHz",
-      "boost_clock": "1725 MHz",
-      "power_consumption": "220 W",
-      "price": 499.99,
-      "image": "https://example.com/images/rtx3070.jpg"
+      "price": 999.99,
+      "image": "/graphics_card/amd-radeon-rx-6900-xt.png"
     },
     {
       "id": 9,
-      "name": "AMD Radeon RX 6700 XT",
-      "manufacturer": "AMD",
+      "name": "NVIDIA GeForce RTX 3060",
+      "manufacturer": "NVIDIA",
       "memory": "12 GB GDDR6",
-      "base_clock": "2321 MHz",
-      "boost_clock": "2581 MHz",
-      "power_consumption": "230 W",
-      "price": 479.99,
-      "image": "https://example.com/images/rx6700xt.jpg"
+      "base_clock": "1320 MHz",
+      "boost_clock": "1777 MHz",
+      "power_consumption": "170 W",
+      "price": 329.99,
+      "image": "/graphics_card/nvidia-geforce-rtx-3060.png"
     },
     {
       "id": 10,
-      "name": "NVIDIA GeForce RTX 3060 Ti",
-      "manufacturer": "NVIDIA",
+      "name": "AMD Radeon RX 6600 XT",
+      "manufacturer": "AMD",
       "memory": "8 GB GDDR6",
-      "base_clock": "1410 MHz",
-      "boost_clock": "1665 MHz",
-      "power_consumption": "200 W",
-      "price": 399.99,
-      "image": "https://example.com/images/rtx3060ti.jpg"
+      "base_clock": "1968 MHz",
+      "boost_clock": "2589 MHz",
+      "power_consumption": "160 W",
+      "price": 379.99,
+      "image": "/graphics_card/amd-radeon-rx-6600-xt.png"
+    },
+    {
+      "id": 11,
+      "name": "AMD Radeon RX 580",
+      "manufacturer": "AMD",
+      "memory": "8 GB GDDR5",
+      "base_clock": "1257 MHz",
+      "boost_clock": "1340 MHz",
+      "power_consumption": "185 W",
+      "price": 229.99,
+      "image": "/graphics_card/amd-radeon-rx-580.png"
+    },
+    {
+      "id": 12,
+      "name": "AMD Radeon RX 590",
+      "manufacturer": "AMD",
+      "memory": "8 GB GDDR5",
+      "base_clock": "1469 MHz",
+      "boost_clock": "1545 MHz",
+      "power_consumption": "225 W",
+      "price": 279.99,
+      "image": "/graphics_card/amd-radeon-rx-590.png"
+    },
+    {
+      "id": 13,
+      "name": "NVIDIA GeForce GTX 1660",
+      "manufacturer": "NVIDIA",
+      "memory": "6 GB GDDR5",
+      "base_clock": "1530 MHz",
+      "boost_clock": "1785 MHz",
+      "power_consumption": "120 W",
+      "price": 219.99,
+      "image": "/graphics_card/nvidia-geforce-gtx-1660.png"
     }
   ],
   "processor": [
@@ -122,7 +155,7 @@
       "threads": 16,
       "tdp": "125 W",
       "price": 539.99,
-      "image": "https://example.com/images/i9-11900K.jpg"
+      "image": "/processors/intel-core-i9-11900K.png"
     },
     {
       "id": 2,
@@ -134,7 +167,7 @@
       "threads": 16,
       "tdp": "125 W",
       "price": 399.99,
-      "image": "https://example.com/images/i7-11700K.jpg"
+      "image": "/processors/intel-core-i7-11700K.png"
     },
     {
       "id": 3,
@@ -146,7 +179,7 @@
       "threads": 12,
       "tdp": "125 W",
       "price": 262.99,
-      "image": "https://example.com/images/i5-11600K.jpg"
+      "image": "/processors/intel-core-i5-11600K.png"
     },
     {
       "id": 4,
@@ -158,7 +191,7 @@
       "threads": 8,
       "tdp": "65 W",
       "price": 122.99,
-      "image": "https://example.com/images/i3-10100.jpg"
+      "image": "/processors/intel-core-i3-10100.png"
     },
     {
       "id": 5,
@@ -170,7 +203,7 @@
       "threads": 20,
       "tdp": "125 W",
       "price": 488.99,
-      "image": "https://example.com/images/i9-10900K.jpg"
+      "image": "/processors/intel-core-i9-10900K.png"
     },
     {
       "id": 6,
@@ -182,7 +215,7 @@
       "threads": 32,
       "tdp": "105 W",
       "price": 799.99,
-      "image": "https://example.com/images/ryzen9-5950x.jpg"
+      "image": "/processors/amd-ryzen-9-5950X.png"
     },
     {
       "id": 7,
@@ -194,7 +227,7 @@
       "threads": 16,
       "tdp": "105 W",
       "price": 449.99,
-      "image": "https://example.com/images/ryzen7-5800x.jpg"
+      "image": "/processors/amd-ryzen-7-5800X.png"
     },
     {
       "id": 8,
@@ -206,7 +239,7 @@
       "threads": 12,
       "tdp": "65 W",
       "price": 299.99,
-      "image": "https://example.com/images/ryzen5-5600x.jpg"
+      "image": "/processors/amd-ryzen-5-5600X.png"
     },
     {
       "id": 9,
@@ -218,7 +251,7 @@
       "threads": 24,
       "tdp": "105 W",
       "price": 549.99,
-      "image": "https://example.com/images/ryzen9-5900x.jpg"
+      "image": "/processors/amd-ryzen-9-5900X.png"
     },
     {
       "id": 10,
@@ -230,7 +263,7 @@
       "threads": 16,
       "tdp": "65 W",
       "price": 359.99,
-      "image": "https://example.com/images/ryzen7-5700g.jpg"
+      "image": "/processors/amd-ryzen-7-5700G.png"
     },
     {
       "id": 11,
@@ -242,7 +275,7 @@
       "threads": 20,
       "tdp": "125 W",
       "price": 409.99,
-      "image": "https://example.com/images/i7-12700K.jpg"
+      "image": "/processors/intel-core-i7-12700K.png"
     },
     {
       "id": 12,
@@ -254,7 +287,7 @@
       "threads": 16,
       "tdp": "125 W",
       "price": 289.99,
-      "image": "https://example.com/images/i5-12600K.jpg"
+      "image": "/processors/intel-core-i5-12600K.png"
     },
     {
       "id": 13,
@@ -266,7 +299,7 @@
       "threads": 8,
       "tdp": "60 W",
       "price": 149.99,
-      "image": "https://example.com/images/i3-12100.jpg"
+      "image": "/processors/intel-core-i3-12100.png"
     },
     {
       "id": 14,
@@ -278,7 +311,7 @@
       "threads": 12,
       "tdp": "105 W",
       "price": 349.99,
-      "image": "https://example.com/images/ryzen5-7600x.jpg"
+      "image": "/processors/amd-ryzen-5-7600X.webp"
     },
     {
       "id": 15,
@@ -290,7 +323,7 @@
       "threads": 16,
       "tdp": "65 W",
       "price": 359.99,
-      "image": "https://example.com/images/ryzen7-5800g.jpg"
+      "image": "/processors/amd-ryzen-7-5800G.webp"
     }
   ],
   "memory_ram": [
@@ -304,7 +337,7 @@
       "cas_latency": "16",
       "voltage": "1.35 V",
       "price": 79.99,
-      "image": "https://example.com/images/corsair_vengeance_16gb.jpg"
+      "image": "/memory_ram/corsair_venge0.png"
     },
     {
       "id": 2,
@@ -316,7 +349,7 @@
       "cas_latency": "16",
       "voltage": "1.35 V",
       "price": 89.99,
-      "image": "https://example.com/images/gskill_ripjaws_16gb.jpg"
+      "image": "/memory_ram/gskill_ripjaws_v.png"
     },
     {
       "id": 3,
@@ -328,7 +361,7 @@
       "cas_latency": "16",
       "voltage": "1.2 V",
       "price": 69.99,
-      "image": "https://example.com/images/kingston_hyperx_16gb.jpg"
+      "image": "/memory_ram/kingston_hyperx_fury.png"
     },
     {
       "id": 4,
@@ -340,7 +373,7 @@
       "cas_latency": "16",
       "voltage": "1.35 V",
       "price": 139.99,
-      "image": "https://example.com/images/crucial_ballistix_32gb.jpg"
+      "image": "/memory_ram/crucial_ballistix_32gb.png"
     },
     {
       "id": 5,
@@ -352,7 +385,7 @@
       "cas_latency": "16",
       "voltage": "1.35 V",
       "price": 89.99,
-      "image": "https://example.com/images/team_tforce_delta_16gb.jpg"
+      "image": "/memory_ram/team_t_force_delta_rgb.png"
     },
     {
       "id": 6,
@@ -364,7 +397,7 @@
       "cas_latency": "16",
       "voltage": "1.35 V",
       "price": 74.99,
-      "image": "https://example.com/images/adata_xpg_16gb.jpg"
+      "image": "/memory_ram/adata_xpg_gammix_d30.png"
     },
     {
       "id": 7,
@@ -376,7 +409,7 @@
       "cas_latency": "19",
       "voltage": "1.45 V",
       "price": 119.99,
-      "image": "https://example.com/images/patriot_viper_16gb.jpg"
+      "image": "/memory_ram/patriot_viper_steel.png"
     },
     {
       "id": 8,
@@ -388,7 +421,7 @@
       "cas_latency": "18",
       "voltage": "1.35 V",
       "price": 189.99,
-      "image": "https://example.com/images/corsair_dominator_32gb.jpg"
+      "image": "/memory_ram/corsair_dominator_platinum.png"
     },
     {
       "id": 9,
@@ -400,7 +433,7 @@
       "cas_latency": "16",
       "voltage": "1.35 V",
       "price": 99.99,
-      "image": "https://example.com/images/gskill_trident_z_16gb.jpg"
+      "image": "/memory_ram/gskill_trident_z_neo.png"
     },
     {
       "id": 10,
@@ -412,292 +445,288 @@
       "cas_latency": "16",
       "voltage": "1.35 V",
       "price": 139.99,
-      "image": "https://example.com/images/kingston_fury_beast_32gb.jpg"
+      "image": "/memory_ram/kingston_fury_beast.png"
     }
   ],
   "motherboards": [
-    [
-      {
-        "id": 1,
-        "name": "ASUS ROG Strix Z590-E",
-        "manufacturer": "ASUS",
-        "socket": "LGA 1200",
-        "chipset": "Z590",
-        "form_factor": "ATX",
-        "memory_support": "128 GB DDR4",
-        "price": 349.99,
-        "image": "https://example.com/images/asus_rog_strix_z590-e.jpg"
-      },
-      {
-        "id": 2,
-        "name": "MSI MPG B550 Gaming Edge WiFi",
-        "manufacturer": "MSI",
-        "socket": "AM4",
-        "chipset": "B550",
-        "form_factor": "ATX",
-        "memory_support": "128 GB DDR4",
-        "price": 189.99,
-        "image": "https://example.com/images/msi_mpg_b550_gaming_edge_wifi.jpg"
-      },
-      {
-        "id": 3,
-        "name": "Gigabyte Z490 Aorus Master",
-        "manufacturer": "Gigabyte",
-        "socket": "LGA 1200",
-        "chipset": "Z490",
-        "form_factor": "ATX",
-        "memory_support": "128 GB DDR4",
-        "price": 299.99,
-        "image": "https://example.com/images/gigabyte_z490_aorus_master.jpg"
-      },
-      {
-        "id": 4,
-        "name": "ASRock B450M Pro4",
-        "manufacturer": "ASRock",
-        "socket": "AM4",
-        "chipset": "B450",
-        "form_factor": "Micro ATX",
-        "memory_support": "64 GB DDR4",
-        "price": 79.99,
-        "image": "https://example.com/images/asrock_b450m_pro4.jpg"
-      },
-      {
-        "id": 5,
-        "name": "ASUS TUF Gaming X570-Plus",
-        "manufacturer": "ASUS",
-        "socket": "AM4",
-        "chipset": "X570",
-        "form_factor": "ATX",
-        "memory_support": "128 GB DDR4",
-        "price": 199.99,
-        "image": "https://example.com/images/asus_tuf_gaming_x570-plus.jpg"
-      },
-      {
-        "id": 6,
-        "name": "MSI Z490 Gaming Edge WiFi",
-        "manufacturer": "MSI",
-        "socket": "LGA 1200",
-        "chipset": "Z490",
-        "form_factor": "ATX",
-        "memory_support": "128 GB DDR4",
-        "price": 219.99,
-        "image": "https://example.com/images/msi_z490_gaming_edge_wifi.jpg"
-      },
-      {
-        "id": 7,
-        "name": "Gigabyte B450 Aorus Pro WiFi",
-        "manufacturer": "Gigabyte",
-        "socket": "AM4",
-        "chipset": "B450",
-        "form_factor": "ATX",
-        "memory_support": "64 GB DDR4",
-        "price": 109.99,
-        "image": "https://example.com/images/gigabyte_b450_aorus_pro_wifi.jpg"
-      },
-      {
-        "id": 8,
-        "name": "ASRock X570 Phantom Gaming 4",
-        "manufacturer": "ASRock",
-        "socket": "AM4",
-        "chipset": "X570",
-        "form_factor": "ATX",
-        "memory_support": "128 GB DDR4",
-        "price": 169.99,
-        "image": "https://example.com/images/asrock_x570_phantom_gaming_4.jpg"
-      },
-      {
-        "id": 9,
-        "name": "ASUS Prime Z390-A",
-        "manufacturer": "ASUS",
-        "socket": "LGA 1151",
-        "chipset": "Z390",
-        "form_factor": "ATX",
-        "memory_support": "64 GB DDR4",
-        "price": 169.99,
-        "image": "https://example.com/images/asus_prime_z390-a.jpg"
-      },
-      {
-        "id": 10,
-        "name": "MSI B550-A Pro",
-        "manufacturer": "MSI",
-        "socket": "AM4",
-        "chipset": "B550",
-        "form_factor": "ATX",
-        "memory_support": "128 GB DDR4",
-        "price": 139.99,
-        "image": "https://example.com/images/msi_b550-a_pro.jpg"
-      },
-      {
-        "id": 11,
-        "name": "Gigabyte X570 Aorus Elite WiFi",
-        "manufacturer": "Gigabyte",
-        "socket": "AM4",
-        "chipset": "X570",
-        "form_factor": "ATX",
-        "memory_support": "128 GB DDR4",
-        "price": 219.99,
-        "image": "https://example.com/images/gigabyte_x570_aorus_elite_wifi.jpg"
-      },
-      {
-        "id": 12,
-        "name": "ASRock Z490 Taichi",
-        "manufacturer": "ASRock",
-        "socket": "LGA 1200",
-        "chipset": "Z490",
-        "form_factor": "ATX",
-        "memory_support": "128 GB DDR4",
-        "price": 369.99,
-        "image": "https://example.com/images/asrock_z490_taichi.jpg"
-      }
-    ]
+    {
+      "id": 1,
+      "name": "ASUS ROG Strix Z590-E",
+      "manufacturer": "ASUS",
+      "socket": "LGA 1200",
+      "chipset": "Z590",
+      "form_factor": "ATX",
+      "memory_support": "128 GB DDR4",
+      "price": 349.99,
+      "image": "/motherboards/asus_rog_strix_z590-e.png"
+    },
+    {
+      "id": 2,
+      "name": "MSI MPG B550 Gaming Edge WiFi",
+      "manufacturer": "MSI",
+      "socket": "AM4",
+      "chipset": "B550",
+      "form_factor": "ATX",
+      "memory_support": "128 GB DDR4",
+      "price": 189.99,
+      "image": "/motherboards/msi_mpg_b550_gaming_edge_wifi.png"
+    },
+    {
+      "id": 3,
+      "name": "Gigabyte Z490 Aorus Master",
+      "manufacturer": "Gigabyte",
+      "socket": "LGA 1200",
+      "chipset": "Z490",
+      "form_factor": "ATX",
+      "memory_support": "128 GB DDR4",
+      "price": 299.99,
+      "image": "/motherboards/gigabyte_z490_aorus_master.png"
+    },
+    {
+      "id": 4,
+      "name": "ASRock B450M Pro4",
+      "manufacturer": "ASRock",
+      "socket": "AM4",
+      "chipset": "B450",
+      "form_factor": "Micro ATX",
+      "memory_support": "64 GB DDR4",
+      "price": 79.99,
+      "image": "/motherboards/asrock_b450m_pro4.png"
+    },
+    {
+      "id": 5,
+      "name": "ASUS TUF Gaming X570-Plus",
+      "manufacturer": "ASUS",
+      "socket": "AM4",
+      "chipset": "X570",
+      "form_factor": "ATX",
+      "memory_support": "128 GB DDR4",
+      "price": 199.99,
+      "image": "/motherboards/asus_tuf_gaming_x570-plus.png"
+    },
+    {
+      "id": 6,
+      "name": "MSI Z490 Gaming Edge WiFi",
+      "manufacturer": "MSI",
+      "socket": "LGA 1200",
+      "chipset": "Z490",
+      "form_factor": "ATX",
+      "memory_support": "128 GB DDR4",
+      "price": 219.99,
+      "image": "/motherboards/msi_z490_gaming_edge_wifi.png"
+    },
+    {
+      "id": 7,
+      "name": "Gigabyte B450 Aorus Pro WiFi",
+      "manufacturer": "Gigabyte",
+      "socket": "AM4",
+      "chipset": "B450",
+      "form_factor": "ATX",
+      "memory_support": "64 GB DDR4",
+      "price": 109.99,
+      "image": "/motherboards/gigabyte_b450_aorus_pro_wifi.png"
+    },
+    {
+      "id": 8,
+      "name": "ASRock X570 Phantom Gaming 4",
+      "manufacturer": "ASRock",
+      "socket": "AM4",
+      "chipset": "X570",
+      "form_factor": "ATX",
+      "memory_support": "128 GB DDR4",
+      "price": 169.99,
+      "image": "/motherboards/asrock_x570_phantom_gaming_4.png"
+    },
+    {
+      "id": 9,
+      "name": "ASUS Prime Z390-A",
+      "manufacturer": "ASUS",
+      "socket": "LGA 1151",
+      "chipset": "Z390",
+      "form_factor": "ATX",
+      "memory_support": "64 GB DDR4",
+      "price": 169.99,
+      "image": "/motherboards/asus_prime_z390-a.png"
+    },
+    {
+      "id": 10,
+      "name": "MSI B550-A Pro",
+      "manufacturer": "MSI",
+      "socket": "AM4",
+      "chipset": "B550",
+      "form_factor": "ATX",
+      "memory_support": "128 GB DDR4",
+      "price": 139.99,
+      "image": "/motherboards/msi_b550-a_pro.png"
+    },
+    {
+      "id": 11,
+      "name": "Gigabyte X570 Aorus Elite WiFi",
+      "manufacturer": "Gigabyte",
+      "socket": "AM4",
+      "chipset": "X570",
+      "form_factor": "ATX",
+      "memory_support": "128 GB DDR4",
+      "price": 219.99,
+      "image": "/motherboards/gigabyte_x570_aorus_elite_wifi.png"
+    },
+    {
+      "id": 12,
+      "name": "ASRock Z490 Taichi",
+      "manufacturer": "ASRock",
+      "socket": "LGA 1200",
+      "chipset": "Z490",
+      "form_factor": "ATX",
+      "memory_support": "128 GB DDR4",
+      "price": 369.99,
+      "image": "/motherboards/asrock_z490_taichi.png"
+    }
   ],
   "storage_drives": [
-    [
-      {
-        "id": 1,
-        "name": "Samsung 970 Evo Plus 1TB NVMe",
-        "manufacturer": "Samsung",
-        "type": "SSD",
-        "interface": "NVMe",
-        "capacity": "1 TB",
-        "read_speed": "3500 MB/s",
-        "write_speed": "3300 MB/s",
-        "price": 169.99,
-        "image": "https://example.com/images/samsung_970_evo_plus_1tb.jpg"
-      },
-      {
-        "id": 2,
-        "name": "WD Black SN750 1TB NVMe",
-        "manufacturer": "Western Digital",
-        "type": "SSD",
-        "interface": "NVMe",
-        "capacity": "1 TB",
-        "read_speed": "3430 MB/s",
-        "write_speed": "3000 MB/s",
-        "price": 149.99,
-        "image": "https://example.com/images/wd_black_sn750_1tb.jpg"
-      },
-      {
-        "id": 3,
-        "name": "Crucial MX500 1TB SATA",
-        "manufacturer": "Crucial",
-        "type": "SSD",
-        "interface": "SATA",
-        "capacity": "1 TB",
-        "read_speed": "560 MB/s",
-        "write_speed": "510 MB/s",
-        "price": 99.99,
-        "image": "https://example.com/images/crucial_mx500_1tb.jpg"
-      },
-      {
-        "id": 4,
-        "name": "Seagate Barracuda 2TB",
-        "manufacturer": "Seagate",
-        "type": "HDD",
-        "interface": "SATA",
-        "capacity": "2 TB",
-        "read_speed": "220 MB/s",
-        "write_speed": "220 MB/s",
-        "price": 54.99,
-        "image": "https://example.com/images/seagate_barracuda_2tb.jpg"
-      },
-      {
-        "id": 5,
-        "name": "Kingston A2000 1TB NVMe",
-        "manufacturer": "Kingston",
-        "type": "SSD",
-        "interface": "NVMe",
-        "capacity": "1 TB",
-        "read_speed": "2200 MB/s",
-        "write_speed": "2000 MB/s",
-        "price": 124.99,
-        "image": "https://example.com/images/kingston_a2000_1tb.jpg"
-      },
-      {
-        "id": 6,
-        "name": "Samsung 860 Evo 500GB SATA",
-        "manufacturer": "Samsung",
-        "type": "SSD",
-        "interface": "SATA",
-        "capacity": "500 GB",
-        "read_speed": "550 MB/s",
-        "write_speed": "520 MB/s",
-        "price": 69.99,
-        "image": "https://example.com/images/samsung_860_evo_500gb.jpg"
-      },
-      {
-        "id": 7,
-        "name": "WD Blue 1TB SATA",
-        "manufacturer": "Western Digital",
-        "type": "HDD",
-        "interface": "SATA",
-        "capacity": "1 TB",
-        "read_speed": "150 MB/s",
-        "write_speed": "150 MB/s",
-        "price": 49.99,
-        "image": "https://example.com/images/wd_blue_1tb.jpg"
-      },
-      {
-        "id": 8,
-        "name": "SanDisk Extreme Pro 1TB NVMe",
-        "manufacturer": "SanDisk",
-        "type": "SSD",
-        "interface": "NVMe",
-        "capacity": "1 TB",
-        "read_speed": "3400 MB/s",
-        "write_speed": "2800 MB/s",
-        "price": 179.99,
-        "image": "https://example.com/images/sandisk_extreme_pro_1tb.jpg"
-      },
-      {
-        "id": 9,
-        "name": "Crucial P1 1TB NVMe",
-        "manufacturer": "Crucial",
-        "type": "SSD",
-        "interface": "NVMe",
-        "capacity": "1 TB",
-        "read_speed": "2000 MB/s",
-        "write_speed": "1700 MB/s",
-        "price": 109.99,
-        "image": "https://example.com/images/crucial_p1_1tb.jpg"
-      },
-      {
-        "id": 10,
-        "name": "Toshiba X300 4TB",
-        "manufacturer": "Toshiba",
-        "type": "HDD",
-        "interface": "SATA",
-        "capacity": "4 TB",
-        "read_speed": "200 MB/s",
-        "write_speed": "200 MB/s",
-        "price": 99.99,
-        "image": "https://example.com/images/toshiba_x300_4tb.jpg"
-      },
-      {
-        "id": 11,
-        "name": "ADATA SU800 1TB SATA",
-        "manufacturer": "ADATA",
-        "type": "SSD",
-        "interface": "SATA",
-        "capacity": "1 TB",
-        "read_speed": "560 MB/s",
-        "write_speed": "520 MB/s",
-        "price": 89.99,
-        "image": "https://example.com/images/adata_su800_1tb.jpg"
-      },
-      {
-        "id": 12,
-        "name": "WD My Passport 2TB",
-        "manufacturer": "Western Digital",
-        "type": "HDD",
-        "interface": "USB 3.0",
-        "capacity": "2 TB",
-        "read_speed": "120 MB/s",
-        "write_speed": "120 MB/s",
-        "price": 74.99,
-        "image": "https://example.com/images/wd_my_passport_2tb.jpg"
-      }
-    ]
+    {
+      "id": 1,
+      "name": "Samsung 970 Evo Plus 1TB NVMe",
+      "manufacturer": "Samsung",
+      "type": "SSD",
+      "interface": "NVMe",
+      "capacity": "1 TB",
+      "read_speed": "3500 MB/s",
+      "write_speed": "3300 MB/s",
+      "price": 169.99,
+      "image": "https://example.com/images/samsung_970_evo_plus_1tb.jpg"
+    },
+    {
+      "id": 2,
+      "name": "WD Black SN750 1TB NVMe",
+      "manufacturer": "Western Digital",
+      "type": "SSD",
+      "interface": "NVMe",
+      "capacity": "1 TB",
+      "read_speed": "3430 MB/s",
+      "write_speed": "3000 MB/s",
+      "price": 149.99,
+      "image": "https://example.com/images/wd_black_sn750_1tb.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Crucial MX500 1TB SATA",
+      "manufacturer": "Crucial",
+      "type": "SSD",
+      "interface": "SATA",
+      "capacity": "1 TB",
+      "read_speed": "560 MB/s",
+      "write_speed": "510 MB/s",
+      "price": 99.99,
+      "image": "https://example.com/images/crucial_mx500_1tb.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Seagate Barracuda 2TB",
+      "manufacturer": "Seagate",
+      "type": "HDD",
+      "interface": "SATA",
+      "capacity": "2 TB",
+      "read_speed": "220 MB/s",
+      "write_speed": "220 MB/s",
+      "price": 54.99,
+      "image": "https://example.com/images/seagate_barracuda_2tb.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Kingston A2000 1TB NVMe",
+      "manufacturer": "Kingston",
+      "type": "SSD",
+      "interface": "NVMe",
+      "capacity": "1 TB",
+      "read_speed": "2200 MB/s",
+      "write_speed": "2000 MB/s",
+      "price": 124.99,
+      "image": "https://example.com/images/kingston_a2000_1tb.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Samsung 860 Evo 500GB SATA",
+      "manufacturer": "Samsung",
+      "type": "SSD",
+      "interface": "SATA",
+      "capacity": "500 GB",
+      "read_speed": "550 MB/s",
+      "write_speed": "520 MB/s",
+      "price": 69.99,
+      "image": "https://example.com/images/samsung_860_evo_500gb.jpg"
+    },
+    {
+      "id": 7,
+      "name": "WD Blue 1TB SATA",
+      "manufacturer": "Western Digital",
+      "type": "HDD",
+      "interface": "SATA",
+      "capacity": "1 TB",
+      "read_speed": "150 MB/s",
+      "write_speed": "150 MB/s",
+      "price": 49.99,
+      "image": "https://example.com/images/wd_blue_1tb.jpg"
+    },
+    {
+      "id": 8,
+      "name": "SanDisk Extreme Pro 1TB NVMe",
+      "manufacturer": "SanDisk",
+      "type": "SSD",
+      "interface": "NVMe",
+      "capacity": "1 TB",
+      "read_speed": "3400 MB/s",
+      "write_speed": "2800 MB/s",
+      "price": 179.99,
+      "image": "https://example.com/images/sandisk_extreme_pro_1tb.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Crucial P1 1TB NVMe",
+      "manufacturer": "Crucial",
+      "type": "SSD",
+      "interface": "NVMe",
+      "capacity": "1 TB",
+      "read_speed": "2000 MB/s",
+      "write_speed": "1700 MB/s",
+      "price": 109.99,
+      "image": "https://example.com/images/crucial_p1_1tb.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Toshiba X300 4TB",
+      "manufacturer": "Toshiba",
+      "type": "HDD",
+      "interface": "SATA",
+      "capacity": "4 TB",
+      "read_speed": "200 MB/s",
+      "write_speed": "200 MB/s",
+      "price": 99.99,
+      "image": "https://example.com/images/toshiba_x300_4tb.jpg"
+    },
+    {
+      "id": 11,
+      "name": "ADATA SU800 1TB SATA",
+      "manufacturer": "ADATA",
+      "type": "SSD",
+      "interface": "SATA",
+      "capacity": "1 TB",
+      "read_speed": "560 MB/s",
+      "write_speed": "520 MB/s",
+      "price": 89.99,
+      "image": "https://example.com/images/adata_su800_1tb.jpg"
+    },
+    {
+      "id": 12,
+      "name": "WD My Passport 2TB",
+      "manufacturer": "Western Digital",
+      "type": "HDD",
+      "interface": "USB 3.0",
+      "capacity": "2 TB",
+      "read_speed": "120 MB/s",
+      "write_speed": "120 MB/s",
+      "price": 74.99,
+      "image": "https://example.com/images/wd_my_passport_2tb.jpg"
+    }
   ],
   "power_supplies": [
     {
@@ -822,116 +851,114 @@
     }
   ],
   "cases": [
-    [
-      {
-        "id": 1,
-        "name": "NZXT H510",
-        "manufacturer": "NZXT",
-        "form_factor": "Mid Tower",
-        "motherboard_support": "ATX, Micro ATX, Mini ITX",
-        "price": 69.99,
-        "image": "https://example.com/images/nzxt_h510.jpg"
-      },
-      {
-        "id": 2,
-        "name": "Corsair 4000D Airflow",
-        "manufacturer": "Corsair",
-        "form_factor": "Mid Tower",
-        "motherboard_support": "ATX, Micro ATX, Mini ITX",
-        "price": 79.99,
-        "image": "https://example.com/images/corsair_4000d_airflow.jpg"
-      },
-      {
-        "id": 3,
-        "name": "Fractal Design Meshify C",
-        "manufacturer": "Fractal Design",
-        "form_factor": "Mid Tower",
-        "motherboard_support": "ATX, Micro ATX, Mini ITX",
-        "price": 89.99,
-        "image": "https://example.com/images/fractal_design_meshify_c.jpg"
-      },
-      {
-        "id": 4,
-        "name": "Phanteks Eclipse P300A",
-        "manufacturer": "Phanteks",
-        "form_factor": "Mid Tower",
-        "motherboard_support": "ATX, Micro ATX, Mini ITX",
-        "price": 59.99,
-        "image": "https://example.com/images/phanteks_eclipse_p300a.jpg"
-      },
-      {
-        "id": 5,
-        "name": "Cooler Master MasterBox Q300L",
-        "manufacturer": "Cooler Master",
-        "form_factor": "Micro ATX",
-        "motherboard_support": "Micro ATX, Mini ITX",
-        "price": 49.99,
-        "image": "https://example.com/images/cooler_master_masterbox_q300l.jpg"
-      },
-      {
-        "id": 6,
-        "name": "Lian Li PC-O11 Dynamic",
-        "manufacturer": "Lian Li",
-        "form_factor": "Mid Tower",
-        "motherboard_support": "ATX, Micro ATX, Mini ITX, EATX",
-        "price": 129.99,
-        "image": "https://example.com/images/lian_li_pc-o11_dynamic.jpg"
-      },
-      {
-        "id": 7,
-        "name": "Thermaltake Core P3",
-        "manufacturer": "Thermaltake",
-        "form_factor": "Mid Tower",
-        "motherboard_support": "ATX, Micro ATX, Mini ITX",
-        "price": 149.99,
-        "image": "https://example.com/images/thermaltake_core_p3.jpg"
-      },
-      {
-        "id": 8,
-        "name": "Be Quiet! Pure Base 500DX",
-        "manufacturer": "Be Quiet!",
-        "form_factor": "Mid Tower",
-        "motherboard_support": "ATX, Micro ATX, Mini ITX",
-        "price": 99.99,
-        "image": "https://example.com/images/be_quiet_pure_base_500dx.jpg"
-      },
-      {
-        "id": 9,
-        "name": "Antec NX410",
-        "manufacturer": "Antec",
-        "form_factor": "Mid Tower",
-        "motherboard_support": "ATX, Micro ATX, Mini ITX",
-        "price": 69.99,
-        "image": "https://example.com/images/antec_nx410.jpg"
-      },
-      {
-        "id": 10,
-        "name": "Corsair iCUE 220T RGB",
-        "manufacturer": "Corsair",
-        "form_factor": "Mid Tower",
-        "motherboard_support": "ATX, Micro ATX, Mini ITX",
-        "price": 99.99,
-        "image": "https://example.com/images/corsair_icue_220t_rgb.jpg"
-      },
-      {
-        "id": 11,
-        "name": "NZXT H210",
-        "manufacturer": "NZXT",
-        "form_factor": "Mini ITX",
-        "motherboard_support": "Mini ITX",
-        "price": 79.99,
-        "image": "https://example.com/images/nzxt_h210.jpg"
-      },
-      {
-        "id": 12,
-        "name": "Cooler Master MasterCase H500",
-        "manufacturer": "Cooler Master",
-        "form_factor": "Mid Tower",
-        "motherboard_support": "ATX, Micro ATX, Mini ITX",
-        "price": 119.99,
-        "image": "https://example.com/images/cooler_master_mastercase_h500.jpg"
-      }
-    ]
+    {
+      "id": 1,
+      "name": "NZXT H510",
+      "manufacturer": "NZXT",
+      "form_factor": "Mid Tower",
+      "motherboard_support": "ATX, Micro ATX, Mini ITX",
+      "price": 69.99,
+      "image": "https://example.com/images/nzxt_h510.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Corsair 4000D Airflow",
+      "manufacturer": "Corsair",
+      "form_factor": "Mid Tower",
+      "motherboard_support": "ATX, Micro ATX, Mini ITX",
+      "price": 79.99,
+      "image": "https://example.com/images/corsair_4000d_airflow.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Fractal Design Meshify C",
+      "manufacturer": "Fractal Design",
+      "form_factor": "Mid Tower",
+      "motherboard_support": "ATX, Micro ATX, Mini ITX",
+      "price": 89.99,
+      "image": "https://example.com/images/fractal_design_meshify_c.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Phanteks Eclipse P300A",
+      "manufacturer": "Phanteks",
+      "form_factor": "Mid Tower",
+      "motherboard_support": "ATX, Micro ATX, Mini ITX",
+      "price": 59.99,
+      "image": "https://example.com/images/phanteks_eclipse_p300a.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Cooler Master MasterBox Q300L",
+      "manufacturer": "Cooler Master",
+      "form_factor": "Micro ATX",
+      "motherboard_support": "Micro ATX, Mini ITX",
+      "price": 49.99,
+      "image": "https://example.com/images/cooler_master_masterbox_q300l.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Lian Li PC-O11 Dynamic",
+      "manufacturer": "Lian Li",
+      "form_factor": "Mid Tower",
+      "motherboard_support": "ATX, Micro ATX, Mini ITX, EATX",
+      "price": 129.99,
+      "image": "https://example.com/images/lian_li_pc-o11_dynamic.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Thermaltake Core P3",
+      "manufacturer": "Thermaltake",
+      "form_factor": "Mid Tower",
+      "motherboard_support": "ATX, Micro ATX, Mini ITX",
+      "price": 149.99,
+      "image": "https://example.com/images/thermaltake_core_p3.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Be Quiet! Pure Base 500DX",
+      "manufacturer": "Be Quiet!",
+      "form_factor": "Mid Tower",
+      "motherboard_support": "ATX, Micro ATX, Mini ITX",
+      "price": 99.99,
+      "image": "https://example.com/images/be_quiet_pure_base_500dx.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Antec NX410",
+      "manufacturer": "Antec",
+      "form_factor": "Mid Tower",
+      "motherboard_support": "ATX, Micro ATX, Mini ITX",
+      "price": 69.99,
+      "image": "https://example.com/images/antec_nx410.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Corsair iCUE 220T RGB",
+      "manufacturer": "Corsair",
+      "form_factor": "Mid Tower",
+      "motherboard_support": "ATX, Micro ATX, Mini ITX",
+      "price": 99.99,
+      "image": "https://example.com/images/corsair_icue_220t_rgb.jpg"
+    },
+    {
+      "id": 11,
+      "name": "NZXT H210",
+      "manufacturer": "NZXT",
+      "form_factor": "Mini ITX",
+      "motherboard_support": "Mini ITX",
+      "price": 79.99,
+      "image": "https://example.com/images/nzxt_h210.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Cooler Master MasterCase H500",
+      "manufacturer": "Cooler Master",
+      "form_factor": "Mid Tower",
+      "motherboard_support": "ATX, Micro ATX, Mini ITX",
+      "price": 119.99,
+      "image": "https://example.com/images/cooler_master_mastercase_h500.jpg"
+    }
   ],
   "cooling_systems": [
     {
