@@ -1,4 +1,4 @@
-import GraphicCard from "./GraphicCard";
-import Octocat from "./Octocat";
-
-export { GraphicCard, Octocat };
+export * from "./CardIcon";
+export { default as GraphicCard } from "./GraphicCard";
+export { default as Octocat } from "./Octocat";
+export * from "./components";
