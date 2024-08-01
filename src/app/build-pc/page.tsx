@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import mock from "@/mock/components.json";
 import type { Component } from "@/types/components";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const COMPONENTS = {
   cpu: CpuIcon,
@@ -42,7 +42,7 @@ const components_keys: Record<string, ComponentValues> = {
   cpu: "cpu",
   gpu: "gpu",
   power_supplies: "power_supplies",
-  memory_ram4: "memory_ram",
+  memory_ram: "memory_ram",
   motherboard: "motherboards",
   storage_drives: "storage_drives",
   cooler: "cooler",
@@ -67,7 +67,6 @@ export default function Page() {
   const [selectedComponents, setSelectedComponents] = useState<ComponentType>(
     {} as ComponentType,
   );
-  const [animating, setAnimating] = useState(false);
 
   const handleGoToComponentSelected = (step: number) => {
     setCurrentStep(step);
@@ -89,15 +88,6 @@ export default function Page() {
   };
 
   const currentComponent = STEPS[currentStep] as ComponentValues;
-
-  useEffect(() => {
-    setAnimating(true);
-    const timer = setTimeout(() => {
-      setAnimating(false);
-    }, 500); // Duración de la animación
-
-    return () => clearTimeout(timer);
-  }, [currentStep]);
 
   return (
     <section className="flex gap-3">
@@ -151,7 +141,7 @@ export default function Page() {
             >
               <Image
                 src={component.image}
-                className="object-cover rounded-lg mr-4"
+                className="object-contain rounded-lg mr-4"
                 width={79}
                 height={79}
                 alt={component.name}
