@@ -1,4 +1,4 @@
-import { cardsContent } from "@/constants/constants";
+import { cardsContent } from "@/constants";
 
 function CardList() {
   return (

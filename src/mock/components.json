@@ -1,5 +1,5 @@
 {
-  "graphics_card": [
+  "gpu": [
     {
       "id": 1,
       "name": "NVIDIA GeForce RTX 3080",
@@ -9,7 +9,8 @@
       "boost_clock": "1710 MHz",
       "power_consumption": "320 W",
       "price": 699.99,
-      "image": "/graphics_card/nvidia-geforce-rtx-3080.png"
+      "image": "/graphics_card/nvidia-geforce-rtx-3080.png",
+      "type_component": "gpu"
     },
     {
       "id": 2,
@@ -20,7 +21,8 @@
       "boost_clock": "2250 MHz",
       "power_consumption": "300 W",
       "price": 649.99,
-      "image": "/graphics_card/amd-radeon-rx-6800-xt.png"
+      "image": "/graphics_card/amd-radeon-rx-6800-xt.png",
+      "type_component": "gpu"
     },
     {
       "id": 3,
@@ -31,7 +33,8 @@
       "boost_clock": "1725 MHz",
       "power_consumption": "220 W",
       "price": 499.99,
-      "image": "/graphics_card/nvidia-geforce-rtx-3070.png"
+      "image": "/graphics_card/nvidia-geforce-rtx-3070.png",
+      "type_component": "gpu"
     },
     {
       "id": 4,
@@ -42,7 +45,8 @@
       "boost_clock": "2581 MHz",
       "power_consumption": "230 W",
       "price": 479.99,
-      "image": "/graphics_card/amd-radeon-rx-6700-xt.png"
+      "image": "/graphics_card/amd-radeon-rx-6700-xt.png",
+      "type_component": "gpu"
     },
     {
       "id": 5,
@@ -53,7 +57,8 @@
       "boost_clock": "1665 MHz",
       "power_consumption": "200 W",
       "price": 399.99,
-      "image": "/graphics_card/nvidia-geforce-rtx-3060-ti.png"
+      "image": "/graphics_card/nvidia-geforce-rtx-3060-ti.png",
+      "type_component": "gpu"
     },
     {
       "id": 6,
@@ -64,7 +69,8 @@
       "boost_clock": "1710 MHz",
       "power_consumption": "320 W",
       "price": 699.99,
-      "image": "/graphics_card/nvidia-geforce-rtx-3080-ti.png"
+      "image": "/graphics_card/nvidia-geforce-rtx-3080-ti.png",
+      "type_component": "gpu"
     },
     {
       "id": 7,
@@ -75,7 +81,8 @@
       "boost_clock": "1695 MHz",
       "power_consumption": "350 W",
       "price": 1499.99,
-      "image": "/graphics_card/nvidia-geforce-rtx-3090.png"
+      "image": "/graphics_card/nvidia-geforce-rtx-3090.png",
+      "type_component": "gpu"
     },
     {
       "id": 8,
@@ -86,7 +93,8 @@
       "boost_clock": "2250 MHz",
       "power_consumption": "300 W",
       "price": 999.99,
-      "image": "/graphics_card/amd-radeon-rx-6900-xt.png"
+      "image": "/graphics_card/amd-radeon-rx-6900-xt.png",
+      "type_component": "gpu"
     },
     {
       "id": 9,
@@ -97,7 +105,8 @@
       "boost_clock": "1777 MHz",
       "power_consumption": "170 W",
       "price": 329.99,
-      "image": "/graphics_card/nvidia-geforce-rtx-3060.png"
+      "image": "/graphics_card/nvidia-geforce-rtx-3060.png",
+      "type_component": "gpu"
     },
     {
       "id": 10,
@@ -108,7 +117,8 @@
       "boost_clock": "2589 MHz",
       "power_consumption": "160 W",
       "price": 379.99,
-      "image": "/graphics_card/amd-radeon-rx-6600-xt.png"
+      "image": "/graphics_card/amd-radeon-rx-6600-xt.png",
+      "type_component": "gpu"
     },
     {
       "id": 11,
@@ -119,7 +129,8 @@
       "boost_clock": "1340 MHz",
       "power_consumption": "185 W",
       "price": 229.99,
-      "image": "/graphics_card/amd-radeon-rx-580.png"
+      "image": "/graphics_card/amd-radeon-rx-580.png",
+      "type_component": "gpu"
     },
     {
       "id": 12,
@@ -130,7 +141,8 @@
       "boost_clock": "1545 MHz",
       "power_consumption": "225 W",
       "price": 279.99,
-      "image": "/graphics_card/amd-radeon-rx-590.png"
+      "image": "/graphics_card/amd-radeon-rx-590.png",
+      "type_component": "gpu"
     },
     {
       "id": 13,
@@ -141,10 +153,11 @@
       "boost_clock": "1785 MHz",
       "power_consumption": "120 W",
       "price": 219.99,
-      "image": "/graphics_card/nvidia-geforce-gtx-1660.png"
+      "image": "/graphics_card/nvidia-geforce-gtx-1660.png",
+      "type_component": "gpu"
     }
   ],
-  "processor": [
+  "cpu": [
     {
       "id": 1,
       "name": "Intel Core i9-11900K",
@@ -155,7 +168,8 @@
       "threads": 16,
       "tdp": "125 W",
       "price": 539.99,
-      "image": "/processors/intel-core-i9-11900K.png"
+      "image": "/processors/intel-core-i9-11900K.png",
+      "type_component": "cpu"
     },
     {
       "id": 2,
@@ -167,7 +181,8 @@
       "threads": 16,
       "tdp": "125 W",
       "price": 399.99,
-      "image": "/processors/intel-core-i7-11700K.png"
+      "image": "/processors/intel-core-i7-11700K.png",
+      "type_component": "cpu"
     },
     {
       "id": 3,
@@ -179,7 +194,8 @@
       "threads": 12,
       "tdp": "125 W",
       "price": 262.99,
-      "image": "/processors/intel-core-i5-11600K.png"
+      "image": "/processors/intel-core-i5-11600K.png",
+      "type_component": "cpu"
     },
     {
       "id": 4,
@@ -191,7 +207,8 @@
       "threads": 8,
       "tdp": "65 W",
       "price": 122.99,
-      "image": "/processors/intel-core-i3-10100.png"
+      "image": "/processors/intel-core-i3-10100.png",
+      "type_component": "cpu"
     },
     {
       "id": 5,
@@ -203,7 +220,8 @@
       "threads": 20,
       "tdp": "125 W",
       "price": 488.99,
-      "image": "/processors/intel-core-i9-10900K.png"
+      "image": "/processors/intel-core-i9-10900K.png",
+      "type_component": "cpu"
     },
     {
       "id": 6,
@@ -215,7 +233,8 @@
       "threads": 32,
       "tdp": "105 W",
       "price": 799.99,
-      "image": "/processors/amd-ryzen-9-5950X.png"
+      "image": "/processors/amd-ryzen-9-5950X.png",
+      "type_component": "cpu"
     },
     {
       "id": 7,
@@ -227,7 +246,8 @@
       "threads": 16,
       "tdp": "105 W",
       "price": 449.99,
-      "image": "/processors/amd-ryzen-7-5800X.png"
+      "image": "/processors/amd-ryzen-7-5800X.png",
+      "type_component": "cpu"
     },
     {
       "id": 8,
@@ -239,7 +259,8 @@
       "threads": 12,
       "tdp": "65 W",
       "price": 299.99,
-      "image": "/processors/amd-ryzen-5-5600X.png"
+      "image": "/processors/amd-ryzen-5-5600X.png",
+      "type_component": "cpu"
     },
     {
       "id": 9,
@@ -251,7 +272,8 @@
       "threads": 24,
       "tdp": "105 W",
       "price": 549.99,
-      "image": "/processors/amd-ryzen-9-5900X.png"
+      "image": "/processors/amd-ryzen-9-5900X.png",
+      "type_component": "cpu"
     },
     {
       "id": 10,
@@ -263,7 +285,8 @@
       "threads": 16,
       "tdp": "65 W",
       "price": 359.99,
-      "image": "/processors/amd-ryzen-7-5700G.png"
+      "image": "/processors/amd-ryzen-7-5700G.png",
+      "type_component": "cpu"
     },
     {
       "id": 11,
@@ -275,7 +298,8 @@
       "threads": 20,
       "tdp": "125 W",
       "price": 409.99,
-      "image": "/processors/intel-core-i7-12700K.png"
+      "image": "/processors/intel-core-i7-12700K.png",
+      "type_component": "cpu"
     },
     {
       "id": 12,
@@ -287,7 +311,8 @@
       "threads": 16,
       "tdp": "125 W",
       "price": 289.99,
-      "image": "/processors/intel-core-i5-12600K.png"
+      "image": "/processors/intel-core-i5-12600K.png",
+      "type_component": "cpu"
     },
     {
       "id": 13,
@@ -299,7 +324,8 @@
       "threads": 8,
       "tdp": "60 W",
       "price": 149.99,
-      "image": "/processors/intel-core-i3-12100.png"
+      "image": "/processors/intel-core-i3-12100.png",
+      "type_component": "cpu"
     },
     {
       "id": 14,
@@ -311,7 +337,8 @@
       "threads": 12,
       "tdp": "105 W",
       "price": 349.99,
-      "image": "/processors/amd-ryzen-5-7600X.webp"
+      "image": "/processors/amd-ryzen-5-7600X.webp",
+      "type_component": "cpu"
     },
     {
       "id": 15,
@@ -323,7 +350,8 @@
       "threads": 16,
       "tdp": "65 W",
       "price": 359.99,
-      "image": "/processors/amd-ryzen-7-5800G.webp"
+      "image": "/processors/amd-ryzen-7-5800G.webp",
+      "type_component": "cpu"
     }
   ],
   "memory_ram": [
@@ -337,7 +365,8 @@
       "cas_latency": "16",
       "voltage": "1.35 V",
       "price": 79.99,
-      "image": "/memory_ram/corsair_venge0.png"
+      "image": "/memory_ram/corsair_venge0.png",
+      "type_component": "memory_ram"
     },
     {
       "id": 2,
@@ -349,7 +378,8 @@
       "cas_latency": "16",
       "voltage": "1.35 V",
       "price": 89.99,
-      "image": "/memory_ram/gskill_ripjaws_v.png"
+      "image": "/memory_ram/gskill_ripjaws_v.png",
+      "type_component": "memory_ram"
     },
     {
       "id": 3,
@@ -361,7 +391,8 @@
       "cas_latency": "16",
       "voltage": "1.2 V",
       "price": 69.99,
-      "image": "/memory_ram/kingston_hyperx_fury.png"
+      "image": "/memory_ram/kingston_hyperx_fury.png",
+      "type_component": "memory_ram"
     },
     {
       "id": 4,
@@ -373,7 +404,8 @@
       "cas_latency": "16",
       "voltage": "1.35 V",
       "price": 139.99,
-      "image": "/memory_ram/crucial_ballistix_32gb.png"
+      "image": "/memory_ram/crucial_ballistix_32gb.png",
+      "type_component": "memory_ram"
     },
     {
       "id": 5,
@@ -385,7 +417,8 @@
       "cas_latency": "16",
       "voltage": "1.35 V",
       "price": 89.99,
-      "image": "/memory_ram/team_t_force_delta_rgb.png"
+      "image": "/memory_ram/team_t_force_delta_rgb.png",
+      "type_component": "memory_ram"
     },
     {
       "id": 6,
@@ -397,7 +430,8 @@
       "cas_latency": "16",
       "voltage": "1.35 V",
       "price": 74.99,
-      "image": "/memory_ram/adata_xpg_gammix_d30.png"
+      "image": "/memory_ram/adata_xpg_gammix_d30.png",
+      "type_component": "memory_ram"
     },
     {
       "id": 7,
@@ -409,7 +443,8 @@
       "cas_latency": "19",
       "voltage": "1.45 V",
       "price": 119.99,
-      "image": "/memory_ram/patriot_viper_steel.png"
+      "image": "/memory_ram/patriot_viper_steel.png",
+      "type_component": "memory_ram"
     },
     {
       "id": 8,
@@ -421,7 +456,8 @@
       "cas_latency": "18",
       "voltage": "1.35 V",
       "price": 189.99,
-      "image": "/memory_ram/corsair_dominator_platinum.png"
+      "image": "/memory_ram/corsair_dominator_platinum.png",
+      "type_component": "memory_ram"
     },
     {
       "id": 9,
@@ -433,7 +469,8 @@
       "cas_latency": "16",
       "voltage": "1.35 V",
       "price": 99.99,
-      "image": "/memory_ram/gskill_trident_z_neo.png"
+      "image": "/memory_ram/gskill_trident_z_neo.png",
+      "type_component": "memory_ram"
     },
     {
       "id": 10,
@@ -445,7 +482,8 @@
       "cas_latency": "16",
       "voltage": "1.35 V",
       "price": 139.99,
-      "image": "/memory_ram/kingston_fury_beast.png"
+      "image": "/memory_ram/kingston_fury_beast.png",
+      "type_component": "memory_ram"
     }
   ],
   "motherboards": [
@@ -458,7 +496,8 @@
       "form_factor": "ATX",
       "memory_support": "128 GB DDR4",
       "price": 349.99,
-      "image": "/motherboards/asus_rog_strix_z590-e.png"
+      "image": "/motherboards/asus_rog_strix_z590-e.png",
+      "type_component": "motherboard"
     },
     {
       "id": 2,
@@ -469,7 +508,8 @@
       "form_factor": "ATX",
       "memory_support": "128 GB DDR4",
       "price": 189.99,
-      "image": "/motherboards/msi_mpg_b550_gaming_edge_wifi.png"
+      "image": "/motherboards/msi_mpg_b550_gaming_edge_wifi.png",
+      "type_component": "motherboard"
     },
     {
       "id": 3,
@@ -480,7 +520,8 @@
       "form_factor": "ATX",
       "memory_support": "128 GB DDR4",
       "price": 299.99,
-      "image": "/motherboards/gigabyte_z490_aorus_master.png"
+      "image": "/motherboards/gigabyte_z490_aorus_master.png",
+      "type_component": "motherboard"
     },
     {
       "id": 4,
@@ -491,7 +532,8 @@
       "form_factor": "Micro ATX",
       "memory_support": "64 GB DDR4",
       "price": 79.99,
-      "image": "/motherboards/asrock_b450m_pro4.png"
+      "image": "/motherboards/asrock_b450m_pro4.png",
+      "type_component": "motherboard"
     },
     {
       "id": 5,
@@ -502,7 +544,8 @@
       "form_factor": "ATX",
       "memory_support": "128 GB DDR4",
       "price": 199.99,
-      "image": "/motherboards/asus_tuf_gaming_x570-plus.png"
+      "image": "/motherboards/asus_tuf_gaming_x570-plus.png",
+      "type_component": "motherboard"
     },
     {
       "id": 6,
@@ -513,7 +556,8 @@
       "form_factor": "ATX",
       "memory_support": "128 GB DDR4",
       "price": 219.99,
-      "image": "/motherboards/msi_z490_gaming_edge_wifi.png"
+      "image": "/motherboards/msi_z490_gaming_edge_wifi.png",
+      "type_component": "motherboard"
     },
     {
       "id": 7,
@@ -524,7 +568,8 @@
       "form_factor": "ATX",
       "memory_support": "64 GB DDR4",
       "price": 109.99,
-      "image": "/motherboards/gigabyte_b450_aorus_pro_wifi.png"
+      "image": "/motherboards/gigabyte_b450_aorus_pro_wifi.png",
+      "type_component": "motherboard"
     },
     {
       "id": 8,
@@ -535,7 +580,8 @@
       "form_factor": "ATX",
       "memory_support": "128 GB DDR4",
       "price": 169.99,
-      "image": "/motherboards/asrock_x570_phantom_gaming_4.png"
+      "image": "/motherboards/asrock_x570_phantom_gaming_4.png",
+      "type_component": "motherboard"
     },
     {
       "id": 9,
@@ -546,7 +592,8 @@
       "form_factor": "ATX",
       "memory_support": "64 GB DDR4",
       "price": 169.99,
-      "image": "/motherboards/asus_prime_z390-a.png"
+      "image": "/motherboards/asus_prime_z390-a.png",
+      "type_component": "motherboard"
     },
     {
       "id": 10,
@@ -557,7 +604,8 @@
       "form_factor": "ATX",
       "memory_support": "128 GB DDR4",
       "price": 139.99,
-      "image": "/motherboards/msi_b550-a_pro.png"
+      "image": "/motherboards/msi_b550-a_pro.png",
+      "type_component": "motherboard"
     },
     {
       "id": 11,
@@ -568,7 +616,8 @@
       "form_factor": "ATX",
       "memory_support": "128 GB DDR4",
       "price": 219.99,
-      "image": "/motherboards/gigabyte_x570_aorus_elite_wifi.png"
+      "image": "/motherboards/gigabyte_x570_aorus_elite_wifi.png",
+      "type_component": "motherboard"
     },
     {
       "id": 12,
@@ -579,7 +628,8 @@
       "form_factor": "ATX",
       "memory_support": "128 GB DDR4",
       "price": 369.99,
-      "image": "/motherboards/asrock_z490_taichi.png"
+      "image": "/motherboards/asrock_z490_taichi.png",
+      "type_component": "motherboard"
     }
   ],
   "storage_drives": [
@@ -593,7 +643,8 @@
       "read_speed": "3500 MB/s",
       "write_speed": "3300 MB/s",
       "price": 169.99,
-      "image": "/storage/samsung970evo.png"
+      "image": "/storage/samsung970evo.png",
+      "type_component": "storage_drives"
     },
     {
       "id": 2,
@@ -605,7 +656,8 @@
       "read_speed": "3430 MB/s",
       "write_speed": "3000 MB/s",
       "price": 149.99,
-      "image": "/storage/WD_BLACK.png"
+      "image": "/storage/WD_BLACK.png",
+      "type_component": "storage_drives"
     },
     {
       "id": 3,
@@ -617,7 +669,8 @@
       "read_speed": "560 MB/s",
       "write_speed": "510 MB/s",
       "price": 99.99,
-      "image": "/storage/ssdCrucial.png"
+      "image": "/storage/ssdCrucial.png",
+      "type_component": "storage_drives"
     },
     {
       "id": 4,
@@ -629,7 +682,8 @@
       "read_speed": "220 MB/s",
       "write_speed": "220 MB/s",
       "price": 54.99,
-      "image": "/storage/barracuda2tb.png"
+      "image": "/storage/barracuda2tb.png",
+      "type_component": "storage_drives"
     },
     {
       "id": 5,
@@ -641,7 +695,8 @@
       "read_speed": "2200 MB/s",
       "write_speed": "2000 MB/s",
       "price": 124.99,
-      "image": "/storage/kingston.png"
+      "image": "/storage/kingston.png",
+      "type_component": "storage_drives"
     },
     {
       "id": 6,
@@ -653,7 +708,8 @@
       "read_speed": "550 MB/s",
       "write_speed": "520 MB/s",
       "price": 69.99,
-      "image": "/storage/samsung860.png"
+      "image": "/storage/samsung860.png",
+      "type_component": "storage_drives"
     },
     {
       "id": 7,
@@ -665,7 +721,8 @@
       "read_speed": "150 MB/s",
       "write_speed": "150 MB/s",
       "price": 49.99,
-      "image": "/storage/wdBlue.png"
+      "image": "/storage/wdBlue.png",
+      "type_component": "storage_drives"
     },
     {
       "id": 8,
@@ -677,7 +734,8 @@
       "read_speed": "3400 MB/s",
       "write_speed": "2800 MB/s",
       "price": 179.99,
-      "image": "/storage/ssdSandisk.png"
+      "image": "/storage/ssdSandisk.png",
+      "type_component": "storage_drives"
     },
     {
       "id": 9,
@@ -689,7 +747,8 @@
       "read_speed": "2000 MB/s",
       "write_speed": "1700 MB/s",
       "price": 109.99,
-      "image": "/storage/crucialssd1tb.png"
+      "image": "/storage/crucialssd1tb.png",
+      "type_component": "storage_drives"
     },
     {
       "id": 10,
@@ -701,7 +760,8 @@
       "read_speed": "200 MB/s",
       "write_speed": "200 MB/s",
       "price": 99.99,
-      "image": "/storage/ssdToshiba.png"
+      "image": "/storage/ssdToshiba.png",
+      "type_component": "storage_drives"
     },
     {
       "id": 11,
@@ -713,7 +773,8 @@
       "read_speed": "560 MB/s",
       "write_speed": "520 MB/s",
       "price": 89.99,
-      "image": "/storage/ssdAdata.png"
+      "image": "/storage/ssdAdata.png",
+      "type_component": "storage_drives"
     },
     {
       "id": 12,
@@ -725,7 +786,8 @@
       "read_speed": "120 MB/s",
       "write_speed": "120 MB/s",
       "price": 74.99,
-      "image": "/storage/ssdWesternBlack.png"
+      "image": "/storage/ssdWesternBlack.png",
+      "type_component": "storage_drives"
     }
   ],
   "power_supplies": [
@@ -737,7 +799,8 @@
       "efficiency_rating": "80+ Gold",
       "modularity": "Fully Modular",
       "price": 129.99,
-      "image": "/powerSupplies/psCorsair500.png"
+      "image": "/powerSupplies/psCorsair500.png",
+      "type_component": "power_supplies"
     },
     {
       "id": 2,
@@ -747,7 +810,8 @@
       "efficiency_rating": "80+ Gold",
       "modularity": "Fully Modular",
       "price": 119.99,
-      "image": "/powerSupplies/psEvga600w.png"
+      "image": "/powerSupplies/psEvga600w.png",
+      "type_component": "power_supplies"
     },
     {
       "id": 3,
@@ -757,7 +821,8 @@
       "efficiency_rating": "80+ Gold",
       "modularity": "Fully Modular",
       "price": 99.99,
-      "image": "/powerSupplies/psSeasonic.png"
+      "image": "/powerSupplies/psSeasonic.png",
+      "type_component": "power_supplies"
     },
     {
       "id": 4,
@@ -767,7 +832,8 @@
       "efficiency_rating": "80+ Gold",
       "modularity": "Fully Modular",
       "price": 89.99,
-      "image": "/powerSupplies/psCoolermaster.png"
+      "image": "/powerSupplies/psCoolermaster.png",
+      "type_component": "power_supplies"
     },
     {
       "id": 5,
@@ -777,7 +843,8 @@
       "efficiency_rating": "80+ Gold",
       "modularity": "Fully Modular",
       "price": 139.99,
-      "image": "/powerSupplies/psThermaltake.png"
+      "image": "/powerSupplies/psThermaltake.png",
+      "type_component": "power_supplies"
     },
     {
       "id": 6,
@@ -787,7 +854,8 @@
       "efficiency_rating": "80+ Bronze",
       "modularity": "Semi Modular",
       "price": 69.99,
-      "image": "/powerSupplies/psCorsair550.png"
+      "image": "/powerSupplies/psCorsair550.png",
+      "type_component": "power_supplies"
     },
     {
       "id": 7,
@@ -797,7 +865,8 @@
       "efficiency_rating": "80+ White",
       "modularity": "Non Modular",
       "price": 49.99,
-      "image": "/powerSupplies/psEvga600w.png"
+      "image": "/powerSupplies/psEvga600w.png",
+      "type_component": "power_supplies"
     },
     {
       "id": 8,
@@ -807,7 +876,8 @@
       "efficiency_rating": "80+ Gold",
       "modularity": "Fully Modular",
       "price": 109.99,
-      "image": "/powerSupplies/psCoolermaster600.png"
+      "image": "/powerSupplies/psCoolermaster600.png",
+      "type_component": "power_supplies"
     },
     {
       "id": 9,
@@ -817,7 +887,8 @@
       "efficiency_rating": "80+ White",
       "modularity": "Non Modular",
       "price": 49.99,
-      "image": "/powerSupplies/psThermaltakeSmart.png"
+      "image": "/powerSupplies/psThermaltakeSmart.png",
+      "type_component": "power_supplies"
     }
   ],
   "cases": [
@@ -828,7 +899,8 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 69.99,
-      "image": "/cases/caseNZXTH510.png"
+      "image": "/cases/caseNZXTH510.png",
+      "type_component": "cases"
     },
     {
       "id": 2,
@@ -837,7 +909,8 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 79.99,
-      "image": "/cases/caseCorsair4000D.png"
+      "image": "/cases/caseCorsair4000D.png",
+      "type_component": "cases"
     },
     {
       "id": 3,
@@ -846,7 +919,8 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 89.99,
-      "image": "/cases/caseMesifyC.png"
+      "image": "/cases/caseMesifyC.png",
+      "type_component": "cases"
     },
     {
       "id": 4,
@@ -855,7 +929,8 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 59.99,
-      "image": "/cases/caseEclipseP300A.png"
+      "image": "/cases/caseEclipseP300A.png",
+      "type_component": "cases"
     },
     {
       "id": 5,
@@ -864,7 +939,8 @@
       "form_factor": "Micro ATX",
       "motherboard_support": "Micro ATX, Mini ITX",
       "price": 49.99,
-      "image": "/cases/caseCoolermasterQ300l.png"
+      "image": "/cases/caseCoolermasterQ300l.png",
+      "type_component": "cases"
     },
     {
       "id": 6,
@@ -873,7 +949,8 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX, EATX",
       "price": 129.99,
-      "image": "/cases/caseLianli.png"
+      "image": "/cases/caseLianli.png",
+      "type_component": "cases"
     },
     {
       "id": 7,
@@ -882,7 +959,8 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 149.99,
-      "image": "/cases/caseThermltakeP3.png"
+      "image": "/cases/caseThermltakeP3.png",
+      "type_component": "cases"
     },
     {
       "id": 8,
@@ -891,7 +969,8 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 99.99,
-      "image": "/cases/caseBeQuiet.png"
+      "image": "/cases/caseBeQuiet.png",
+      "type_component": "cases"
     },
     {
       "id": 9,
@@ -900,7 +979,8 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 69.99,
-      "image": "/cases/caseNX410.png"
+      "image": "/cases/caseNX410.png",
+      "type_component": "cases"
     },
     {
       "id": 10,
@@ -909,7 +989,8 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 99.99,
-      "image": "/cases/caseCorsairIcue.png"
+      "image": "/cases/caseCorsairIcue.png",
+      "type_component": "cases"
     },
     {
       "id": 11,
@@ -918,7 +999,8 @@
       "form_factor": "Mini ITX",
       "motherboard_support": "Mini ITX",
       "price": 79.99,
-      "image": "/cases/caseNZXTH210.png"
+      "image": "/cases/caseNZXTH210.png",
+      "type_component": "cases"
     },
     {
       "id": 12,
@@ -927,10 +1009,11 @@
       "form_factor": "Mid Tower",
       "motherboard_support": "ATX, Micro ATX, Mini ITX",
       "price": 119.99,
-      "image": "/cases/caseCoolerMasterH500.png"
+      "image": "/cases/caseCoolerMasterH500.png",
+      "type_component": "cases"
     }
   ],
-  "cooling_systems": [
+  "cooler": [
     {
       "id": 1,
       "name": "Corsair H100i RGB Platinum",
@@ -938,7 +1021,8 @@
       "type": "Liquid",
       "fan_size": "240mm",
       "price": 139.99,
-      "image": "/coolers/corsairH100i.png"
+      "image": "/coolers/corsairH100i.png",
+      "type_component": "cooler"
     },
     {
       "id": 2,
@@ -947,7 +1031,8 @@
       "type": "Air",
       "fan_size": "Dual 140mm",
       "price": 89.99,
-      "image": "/coolers/noctuaNHD15.png"
+      "image": "/coolers/noctuaNHD15.png",
+      "type_component": "cooler"
     },
     {
       "id": 3,
@@ -956,7 +1041,8 @@
       "type": "Liquid",
       "fan_size": "280mm",
       "price": 149.99,
-      "image": "/coolers/nazctKraken.png"
+      "image": "/coolers/nazctKraken.png",
+      "type_component": "cooler"
     },
     {
       "id": 4,
@@ -965,7 +1051,8 @@
       "type": "Air",
       "fan_size": "120mm",
       "price": 49.99,
-      "image": "/coolers/coolermasterHyper212.png"
+      "image": "/coolers/coolermasterHyper212.png",
+      "type_component": "cooler"
     },
     {
       "id": 5,
@@ -974,7 +1061,8 @@
       "type": "Air",
       "fan_size": "Dual 135mm",
       "price": 89.99,
-      "image": "/coolers/bequietDarkrock.png"
+      "image": "/coolers/bequietDarkrock.png",
+      "type_component": "cooler"
     },
     {
       "id": 6,
@@ -983,7 +1071,8 @@
       "type": "Liquid",
       "fan_size": "360mm",
       "price": 179.99,
-      "image": "/coolers/corsairIcueH150i.png"
+      "image": "/coolers/corsairIcueH150i.png",
+      "type_component": "cooler"
     },
     {
       "id": 7,
@@ -992,7 +1081,8 @@
       "type": "Air",
       "fan_size": "120mm",
       "price": 29.99,
-      "image": "/coolers/deepcoolGammax400.png"
+      "image": "/coolers/deepcoolGammax400.png",
+      "type_component": "cooler"
     },
     {
       "id": 8,
@@ -1001,7 +1091,8 @@
       "type": "Liquid",
       "fan_size": "280mm",
       "price": 129.99,
-      "image": "/coolers/evgaCLC280.png"
+      "image": "/coolers/evgaCLC280.png",
+      "type_component": "cooler"
     },
     {
       "id": 9,
@@ -1010,7 +1101,8 @@
       "type": "Liquid",
       "fan_size": "360mm",
       "price": 199.99,
-      "image": "/coolers/thermaltakeFloe.png"
+      "image": "/coolers/thermaltakeFloe.png",
+      "type_component": "cooler"
     },
     {
       "id": 10,
@@ -1019,7 +1111,8 @@
       "type": "Liquid",
       "fan_size": "240mm",
       "price": 79.99,
-      "image": "/coolers/coolermasterML240L.png"
+      "image": "/coolers/coolermasterML240L.png",
+      "type_component": "cooler"
     },
     {
       "id": 11,
@@ -1028,7 +1121,8 @@
       "type": "Air",
       "fan_size": "92mm",
       "price": 39.99,
-      "image": "/coolers/noctuaNH-L9I.png"
+      "image": "/coolers/noctuaNH-L9I.png",
+      "type_component": "cooler"
     },
     {
       "id": 12,
@@ -1037,7 +1131,8 @@
       "type": "Liquid",
       "fan_size": "280mm",
       "price": 119.99,
-      "image": "/coolers/arcticLiquid280.png"
+      "image": "/coolers/arcticLiquid280.png",
+      "type_component": "cooler"
     }
   ]
 }
