@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import mock from "@/mock/components.json";
 import type { Component } from "@/types/components";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const COMPONENTS = {
   cpu: CpuIcon,
@@ -67,6 +67,7 @@ export default function Page() {
   const [selectedComponents, setSelectedComponents] = useState<ComponentType>(
     {} as ComponentType,
   );
+  const [animating, setAnimating] = useState(false);
 
   const handleGoToComponentSelected = (step: number) => {
     setCurrentStep(step);
@@ -89,16 +90,21 @@ export default function Page() {
 
   const currentComponent = STEPS[currentStep] as ComponentValues;
 
+  useEffect(() => {
+    setAnimating(true);
+    const timer = setTimeout(() => {
+      setAnimating(false);
+    }, 500); // Duración de la animación
+
+    return () => clearTimeout(timer);
+  }, [currentStep]);
+
   return (
     <section className="flex gap-3">
       <div className="flex flex-col w-1/2 sm:w-1/3">
         <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 gap-3 h-[65vh] border border-[#B94CED] overflow-auto">
           {Object.entries(COMPONENTS).map(([key, Value], i: number) => {
             const condition = key === currentComponent ? "#B94CED" : "#fff";
-            console.log(key, currentComponent);
-
-            console.log(condition);
-
             return (
               <button
                 key={key}
@@ -128,7 +134,10 @@ export default function Page() {
         </div>
       </div>
       <div className="overflow-y-auto min-h-[750px]">
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+        <ul
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 animate-fade-in"
+          key={currentStep}
+        >
           {mock[currentComponent].map((component: any) => (
             <li
               key={component.id}

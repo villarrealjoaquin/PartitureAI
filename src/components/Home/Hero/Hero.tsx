@@ -3,7 +3,7 @@ import Carousel from "../Carousel/Carousel";
 
 function Hero() {
   return (
-    <section className="flex flex-wrap items-center justify-center xl:justify-center gap-32 pt-40">
+    <section className="gradient-background flex flex-wrap items-center justify-center xl:justify-center gap-32 pt-40">
       <div className="px-4 sm:px-0 flex flex-col items-center xl:items-start gap-10">
         <div className="flex flex-col justify-center lg:justify-start">
           <h1 className="text-center xl:text-start text-[2rem] lg:text-[3rem] text-[#B94CED] font-bold max-w-[850px]">
@@ -16,7 +16,9 @@ function Hero() {
         </div>
         <AnimatedButton text="empecemos" />
       </div>
-      <Carousel />
+      <div className="hidden md:block">
+        <Carousel />
+      </div>
     </section>
   );
 }
