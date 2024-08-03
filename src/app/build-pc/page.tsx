@@ -22,6 +22,9 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { createPortal } from "react-dom";
+import Modal from "@/components/Modal/Modal";
+import { Input } from "@/components/ui/input";
 
 const COMPONENTS = {
   cpu: CpuIcon,
@@ -85,6 +88,7 @@ export default function Page() {
   const [selectedComponents, setSelectedComponents] = useState<ComponentType>(
     {} as ComponentType,
   );
+  const [openModal, setOpenModal] = useState(false);
 
   const handleGoToComponentSelected = (step: number) => {
     setCurrentStep(step);
@@ -151,8 +155,51 @@ export default function Page() {
                 </p>
               )}
             </div>
+            <Modal isOpen={openModal} onClose={() => setOpenModal(!openModal)}>
+              <div className="timeline">
+                <p className="text-white mt-5 pt-5 ">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit
+                  amet cupiditate qui temporibus quia! Atque dignissimos
+                  aspernatur maxime incidunt tenetur quaerat maiores molestias
+                </p>
+                <div className="pl-5">
+                  <div>
+                    <button className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]">
+                      Que componentes recomiendas?
+                    </button>
+                    <button className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]">
+                      Que pasaria si la ensamblo como esta?
+                    </button>
+                    <button className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]">
+                      Que componentes recomiendas?
+                    </button>
+                  </div>
+                  <div className="flex w-full max-w-sm items-center space-x-2">
+                    <Input
+                      className="m-1 w-[500px] bg-transparent border-[#B94CED] text-white"
+                      placeholder="Tienes una pregunta? escribela!"
+                    />
+                    <Button
+                      type="submit"
+                      className="bg-[#B94CED] hover:bg-[#B94CED]"
+                    >
+                      Enviar
+                    </Button>
+                  </div>
+                </div>
+              </div>
+              {/* <button
+                onClick={() => setOpenModal(!openModal)}
+                className="mt-4 p-2 bg-[#B94CED] text-white rounded hover:bg-blue-600"
+              >
+                Cerrar
+              </button> */}
+            </Modal>
             <div className="flex justify-center w-full my-2">
-              <Button className="bg-[#B94CED] truncate md:w-full mx-2 hover:bg-[#b065d2]">
+              <Button
+                className="bg-[#B94CED] truncate md:w-full mx-2 hover:bg-[#b065d2]"
+                onClick={() => setOpenModal(!openModal)}
+              >
                 Analizar compatibilidad de mis componentes
               </Button>
             </div>

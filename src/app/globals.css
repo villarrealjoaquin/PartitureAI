@@ -82,3 +82,37 @@ body {
     animation: fade-in 0.5s ease-out;
   }
 }
+
+.timeline {
+  position: relative;
+  padding-left: 30px; /* Aumentar el espacio para no superponer el texto con el círculo */
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 25.5px; /* Posición central del círculo */
+  top: 60px; /* Comienzo de la línea desde el primer punto */
+  bottom: -40px; /* Espacio al final */
+  width: 2px;
+  background: #B94CED; /* Color de la línea */
+}
+
+.timeline p {
+  position: relative;
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.timeline p::before {
+  content: '';
+  position: absolute;
+  left: -11px;
+  top: 50%; /* Centrar verticalmente respecto al texto */
+  transform: translateY(-50%);
+  height: 15px;
+  width: 15px;
+  background: #B94CED;
+  border: 2px solid white;
+  border-radius: 50%;
+}
