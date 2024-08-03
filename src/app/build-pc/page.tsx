@@ -1,87 +1,28 @@
 "use client";
 
 import { CardIcon } from "@/components/Icons";
-import {
-  CasesIcon,
-  CoolerIcon,
-  CpuIcon,
-  GraphicVideoIcon,
-  MemoryRamIcon,
-  MotherboardIcon,
-  PowerSupplyIcon,
-  StorageDrivesIcon,
-} from "@/components/Icons/components";
+import Modal from "@/components/Modal/Modal";
 import { Button } from "@/components/ui/button";
-import mock from "@/mock/components.json";
-import type { Component } from "@/types/components";
-import Image from "next/image";
-import { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { createPortal } from "react-dom";
-import Modal from "@/components/Modal/Modal";
-import { Input } from "@/components/ui/input";
-
-const COMPONENTS = {
-  cpu: CpuIcon,
-  gpu: GraphicVideoIcon,
-  power_supplies: PowerSupplyIcon,
-  memory_ram: MemoryRamIcon,
-  motherboards: MotherboardIcon,
-  storage_drives: StorageDrivesIcon,
-  cooler: CoolerIcon,
-  cases: CasesIcon,
-};
-
-const componentNames = {
-  cpu: "CPU (Central Processing Unit)",
-  gpu: "GPU (Graphics Processing Unit)",
-  power_supplies: "Power Supply",
-  memory_ram: "RAM (Random Access Memory)",
-  motherboards: "Motherboard",
-  storage_drives: "Storage Drives",
-  cooler: "Cooler",
-  cases: "Cases",
-};
-
-type ComponentValues =
-  | "cpu"
-  | "motherboards"
-  | "cooler"
-  | "cases"
-  | "gpu"
-  | "power_supplies"
-  | "memory_ram"
-  | "storage_drives";
-
-const components_keys: Record<string, ComponentValues> = {
-  cpu: "cpu",
-  gpu: "gpu",
-  power_supplies: "power_supplies",
-  memory_ram: "memory_ram",
-  motherboard: "motherboards",
-  storage_drives: "storage_drives",
-  cooler: "cooler",
-  cases: "cases",
-};
-
-const STEPS = [
-  "cpu",
-  "gpu",
-  "power_supplies",
-  "memory_ram",
-  "motherboards",
-  "storage_drives",
-  "cooler",
-  "cases",
-];
-
-type ComponentType = Record<ComponentValues, Component>;
-type ComponentKey = keyof typeof componentNames;
+import {
+  componentNames,
+  COMPONENTS,
+  components_keys,
+  STEPS,
+} from "@/constants";
+import mock from "@/mock/components.json";
+import { API } from "@/services";
+import type { Component, ComponentType, ComponentValues } from "@/types";
+import { checkAllComponentsExist } from "@/utils";
+import Image from "next/image";
+import React, { useState } from "react";
 
 export default function Page() {
   const [currentStep, setCurrentStep] = useState<number>(0);
@@ -89,6 +30,24 @@ export default function Page() {
     {} as ComponentType,
   );
   const [openModal, setOpenModal] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [answer, setAnswer] = useState<any>();
+
+  const handleSubmitComponents = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ) => {
+    event.preventDefault();
+    try {
+      const response = await API.sendComponents(selectedComponents);
+      setAnswer(response.result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleOptionClick = (option: any) => {
+    setSelectedOption(option);
+  };
 
   const handleGoToComponentSelected = (step: number) => {
     setCurrentStep(step);
@@ -118,7 +77,7 @@ export default function Page() {
           <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 gap-3 h-[65vh] border-r border-[#B94CED] overflow-auto">
             {Object.entries(COMPONENTS).map(([key, Value], i: number) => {
               const condition = key === currentComponent ? "#B94CED" : "#fff";
-              const componentKey = key as ComponentKey;
+              const componentKey = key as ComponentValues;
               return (
                 <Tooltip key={key}>
                   <TooltipTrigger asChild>
@@ -136,7 +95,10 @@ export default function Page() {
               );
             })}
           </div>
-          <div className="border-t border-r border-b border-[#B94CED] pt-2">
+          <form
+            onSubmit={handleSubmitComponents}
+            className="border-t border-r border-b border-[#B94CED] pt-2"
+          >
             <div
               className={`grid ${Object.values(selectedComponents).length !== 0 ? "grid-cols-1 sm:grid-cols-2 gap-4" : "flex justify-center items-center"} text-[#A5A5A5] h-[135px] w-full`}
             >
@@ -157,36 +119,70 @@ export default function Page() {
             </div>
             <Modal isOpen={openModal} onClose={() => setOpenModal(!openModal)}>
               <div className="timeline">
-                <p className="text-white mt-5 pt-5 ">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit
-                  amet cupiditate qui temporibus quia! Atque dignissimos
-                  aspernatur maxime incidunt tenetur quaerat maiores molestias
+                <p className="text-white mt-5 pt-5 pr-4 max-w-4xl">
+                  {answer ? (
+                    <span>{answer}</span>
+                  ) : (
+                    <div className="flex flex-col gap-2">
+                      <Skeleton className="w-1/2 h-[10px]" />
+                      <Skeleton className="w-10/12 h-[10px]" />
+                      <Skeleton className="w-full h-[10px]" />
+                    </div>
+                  )}
                 </p>
-                <div className="pl-5">
-                  <div>
-                    <button className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]">
-                      Que componentes recomiendas?
-                    </button>
-                    <button className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]">
-                      Que pasaria si la ensamblo como esta?
-                    </button>
-                    <button className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]">
-                      Que componentes recomiendas?
-                    </button>
+                {answer && (
+                  <div className="pl-5">
+                    {selectedOption === null && (
+                      <>
+                        <div>
+                          <button
+                            className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]"
+                            onClick={() =>
+                              handleOptionClick("Que componentes recomiendas?")
+                            }
+                          >
+                            Que componentes recomiendas?
+                          </button>
+                          <button
+                            className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]"
+                            onClick={() =>
+                              handleOptionClick(
+                                "Que pasaria si la ensamblo como esta?",
+                              )
+                            }
+                          >
+                            Que pasaria si la ensamblo como esta?
+                          </button>
+                          <button
+                            className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]"
+                            onClick={() =>
+                              handleOptionClick("Que componentes recomiendas?")
+                            }
+                          >
+                            Que componentes recomiendas?
+                          </button>
+                        </div>
+                        <div className="flex w-full max-w-sm items-center space-x-2">
+                          <Input
+                            className="m-1 w-[500px] bg-transparent border-[#B94CED] text-white"
+                            placeholder="Tienes una pregunta? escribela!"
+                          />
+                          <Button
+                            type="submit"
+                            className="bg-[#B94CED] hover:bg-[#B94CED]"
+                          >
+                            Enviar
+                          </Button>
+                        </div>
+                      </>
+                    )}
+                    {selectedOption && (
+                      <button className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 bg-[#B94CED]">
+                        {selectedOption}
+                      </button>
+                    )}
                   </div>
-                  <div className="flex w-full max-w-sm items-center space-x-2">
-                    <Input
-                      className="m-1 w-[500px] bg-transparent border-[#B94CED] text-white"
-                      placeholder="Tienes una pregunta? escribela!"
-                    />
-                    <Button
-                      type="submit"
-                      className="bg-[#B94CED] hover:bg-[#B94CED]"
-                    >
-                      Enviar
-                    </Button>
-                  </div>
-                </div>
+                )}
               </div>
               {/* <button
                 onClick={() => setOpenModal(!openModal)}
@@ -197,13 +193,14 @@ export default function Page() {
             </Modal>
             <div className="flex justify-center w-full my-2">
               <Button
-                className="bg-[#B94CED] truncate md:w-full mx-2 hover:bg-[#b065d2]"
+                disabled={!checkAllComponentsExist(selectedComponents)}
                 onClick={() => setOpenModal(!openModal)}
+                className="bg-[#B94CED] truncate md:w-full mx-2 hover:bg-[#b065d2]"
               >
                 Analizar compatibilidad de mis componentes
               </Button>
             </div>
-          </div>
+          </form>
         </div>
         <div className="overflow-y-auto min-h-[750px]">
           <ul
