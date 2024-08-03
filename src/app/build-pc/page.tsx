@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import mock from "@/mock/components.json";
 import type { Component } from "@/types/components";
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   Tooltip,
   TooltipContent,
@@ -86,6 +86,27 @@ export default function Page() {
     {} as ComponentType,
   );
 
+  const handleSubmitComponents = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ) => {
+    event.preventDefault();
+    console.log(selectedComponents, "selectedComponents");
+    try {
+      const response = await fetch("/api/components-pc", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt: selectedComponents }),
+      });
+      if (!response.ok) throw new Error(response.statusText);
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleGoToComponentSelected = (step: number) => {
     setCurrentStep(step);
   };
@@ -132,7 +153,10 @@ export default function Page() {
               );
             })}
           </div>
-          <div className="border-t border-r border-b border-[#B94CED] pt-2">
+          <form
+            onSubmit={handleSubmitComponents}
+            className="border-t border-r border-b border-[#B94CED] pt-2"
+          >
             <div
               className={`grid ${Object.values(selectedComponents).length !== 0 ? "grid-cols-1 sm:grid-cols-2 gap-4" : "flex justify-center items-center"} text-[#A5A5A5] h-[135px] w-full`}
             >
@@ -156,7 +180,7 @@ export default function Page() {
                 Analizar compatibilidad de mis componentes
               </Button>
             </div>
-          </div>
+          </form>
         </div>
         <div className="overflow-y-auto min-h-[750px]">
           <ul
