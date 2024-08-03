@@ -1,59 +1,20 @@
 "use client";
 
 import { CardIcon } from "@/components/Icons";
-import {
-  CasesIcon,
-  CoolerIcon,
-  CpuIcon,
-  GraphicVideoIcon,
-  MemoryRamIcon,
-  MotherboardIcon,
-  PowerSupplyIcon,
-  StorageDrivesIcon,
-} from "@/components/Icons/components";
 import { Button } from "@/components/ui/button";
-import mock from "@/mock/components.json";
-import type { Component } from "@/types/components";
-import Image from "next/image";
-import React, { useState } from "react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-
-const COMPONENTS = {
-  cpu: CpuIcon,
-  gpu: GraphicVideoIcon,
-  power_supplies: PowerSupplyIcon,
-  memory_ram: MemoryRamIcon,
-  motherboards: MotherboardIcon,
-  storage_drives: StorageDrivesIcon,
-  cooler: CoolerIcon,
-  cases: CasesIcon,
-};
-
-const componentNames = {
-  cpu: "CPU (Central Processing Unit)",
-  gpu: "GPU (Graphics Processing Unit)",
-  power_supplies: "Power Supply",
-  memory_ram: "RAM (Random Access Memory)",
-  motherboards: "Motherboard",
-  storage_drives: "Storage Drives",
-  cooler: "Cooler",
-  cases: "Cases",
-};
-
-type ComponentValues =
-  | "cpu"
-  | "motherboards"
-  | "cooler"
-  | "cases"
-  | "gpu"
-  | "power_supplies"
-  | "memory_ram"
-  | "storage_drives";
+import { componentNames, COMPONENTS } from "@/constants";
+import mock from "@/mock/components.json";
+import { API } from "@/services";
+import type { Component, ComponentType, ComponentValues } from "@/types";
+import { checkAllComponentsExist } from "@/utils";
+import Image from "next/image";
+import React, { useState } from "react";
 
 const components_keys: Record<string, ComponentValues> = {
   cpu: "cpu",
@@ -77,9 +38,6 @@ const STEPS = [
   "cases",
 ];
 
-type ComponentType = Record<ComponentValues, Component>;
-type ComponentKey = keyof typeof componentNames;
-
 export default function Page() {
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [selectedComponents, setSelectedComponents] = useState<ComponentType>(
@@ -90,18 +48,9 @@ export default function Page() {
     event: React.FormEvent<HTMLFormElement>,
   ) => {
     event.preventDefault();
-    console.log(selectedComponents, "selectedComponents");
     try {
-      const response = await fetch("/api/components-pc", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ prompt: selectedComponents }),
-      });
-      if (!response.ok) throw new Error(response.statusText);
-      const data = await response.json();
-      console.log(data);
+      const response = await API.sendComponents(selectedComponents);
+      console.log(response);
     } catch (error) {
       console.log(error);
     }
@@ -135,7 +84,7 @@ export default function Page() {
           <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 gap-3 h-[65vh] border-r border-[#B94CED] overflow-auto">
             {Object.entries(COMPONENTS).map(([key, Value], i: number) => {
               const condition = key === currentComponent ? "#B94CED" : "#fff";
-              const componentKey = key as ComponentKey;
+              const componentKey = key as ComponentValues;
               return (
                 <Tooltip key={key}>
                   <TooltipTrigger asChild>
@@ -176,7 +125,10 @@ export default function Page() {
               )}
             </div>
             <div className="flex justify-center w-full my-2">
-              <Button className="bg-[#B94CED] truncate md:w-full mx-2 hover:bg-[#b065d2]">
+              <Button
+                disabled={!checkAllComponentsExist(selectedComponents)}
+                className="bg-[#B94CED] truncate md:w-full mx-2 hover:bg-[#b065d2]"
+              >
                 Analizar compatibilidad de mis componentes
               </Button>
             </div>

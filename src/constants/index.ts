@@ -1,3 +1,36 @@
+import {
+  CasesIcon,
+  CoolerIcon,
+  CpuIcon,
+  GraphicVideoIcon,
+  MemoryRamIcon,
+  MotherboardIcon,
+  PowerSupplyIcon,
+  StorageDrivesIcon,
+} from "@/components/Icons";
+
+export const COMPONENTS = {
+  cpu: CpuIcon,
+  gpu: GraphicVideoIcon,
+  power_supplies: PowerSupplyIcon,
+  memory_ram: MemoryRamIcon,
+  motherboards: MotherboardIcon,
+  storage_drives: StorageDrivesIcon,
+  cooler: CoolerIcon,
+  cases: CasesIcon,
+};
+
+export const componentNames = {
+  cpu: "CPU (Central Processing Unit)",
+  gpu: "GPU (Graphics Processing Unit)",
+  power_supplies: "Power Supply",
+  memory_ram: "RAM (Random Access Memory)",
+  motherboards: "Motherboard",
+  storage_drives: "Storage Drives",
+  cooler: "Cooler",
+  cases: "Cases",
+};
+
 export const cardsContent = [
   {
     id: 1,

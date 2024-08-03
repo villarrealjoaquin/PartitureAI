@@ -1,4 +1,5 @@
-import { ENVS } from "@/config/envs";
+import { ENVS } from "@/envs";
+import { Messages } from "@/types";
 import { createOpenAI } from "@ai-sdk/openai";
 import { generateText } from "ai";
 import { NextResponse, type NextRequest } from "next/server";
@@ -8,17 +9,15 @@ const perplexity = createOpenAI({
   baseURL: "https://api.perplexity.ai/",
 });
 
-console.log();
-
 const model = perplexity("llama-3-sonar-large-32k-online");
 
 export async function POST(req: NextRequest) {
   const { prompt } = await req.json();
+  const messages: Messages = prompt;
   let result = ``;
-  Object.entries(prompt).forEach(([key, value]) => {
+  Object.entries(messages).forEach(([key, value]) => {
     result += `${key}: ${value.name}`;
   });
-
   try {
     const { text } = await generateText({
       model,
@@ -29,9 +28,7 @@ export async function POST(req: NextRequest) {
        mantenimiento de computadoras. Se espera que te mantengas actualizado con las últimas tecnologías y que brindes respuestas claras y precisas. Tu meta es enriquecer la experiencia
        del usuario proporcionando información técnica comprensible. Ahora, procede a analizar los siguientes componentes que te proporcionaré a continuación: ${result}`,
     });
-    console.log(text, "rsponse text");
-
-    return NextResponse.json({ status: "success", result: "text" });
+    return NextResponse.json({ status: "success", result: text });
   } catch (error) {
     console.error("Failed to generate text: ", error);
     return NextResponse.json({ status: "error", error: error });
