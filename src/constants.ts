@@ -8,6 +8,7 @@ import {
   PowerSupplyIcon,
   StorageDrivesIcon,
 } from "@/components/Icons";
+import type { ComponentValues } from "./types";
 
 export const COMPONENTS = {
   cpu: CpuIcon,
@@ -30,6 +31,28 @@ export const componentNames = {
   cooler: "Cooler",
   cases: "Cases",
 };
+
+export const components_keys: Record<string, ComponentValues> = {
+  cpu: "cpu",
+  gpu: "gpu",
+  power_supplies: "power_supplies",
+  memory_ram: "memory_ram",
+  motherboard: "motherboards",
+  storage_drives: "storage_drives",
+  cooler: "cooler",
+  cases: "cases",
+};
+
+export const STEPS = [
+  "cpu",
+  "gpu",
+  "power_supplies",
+  "memory_ram",
+  "motherboards",
+  "storage_drives",
+  "cooler",
+  "cases",
+];
 
 export const cardsContent = [
   {

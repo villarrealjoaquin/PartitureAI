@@ -8,35 +8,18 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { componentNames, COMPONENTS } from "@/constants";
+import {
+  componentNames,
+  COMPONENTS,
+  components_keys,
+  STEPS,
+} from "@/constants";
 import mock from "@/mock/components.json";
 import { API } from "@/services";
 import type { Component, ComponentType, ComponentValues } from "@/types";
 import { checkAllComponentsExist } from "@/utils";
 import Image from "next/image";
 import React, { useState } from "react";
-
-const components_keys: Record<string, ComponentValues> = {
-  cpu: "cpu",
-  gpu: "gpu",
-  power_supplies: "power_supplies",
-  memory_ram: "memory_ram",
-  motherboard: "motherboards",
-  storage_drives: "storage_drives",
-  cooler: "cooler",
-  cases: "cases",
-};
-
-const STEPS = [
-  "cpu",
-  "gpu",
-  "power_supplies",
-  "memory_ram",
-  "motherboards",
-  "storage_drives",
-  "cooler",
-  "cases",
-];
 
 export default function Page() {
   const [currentStep, setCurrentStep] = useState<number>(0);
