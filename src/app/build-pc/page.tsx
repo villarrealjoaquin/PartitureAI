@@ -1,7 +1,10 @@
 "use client";
 
 import { CardIcon } from "@/components/Icons";
+import Modal from "@/components/Modal/Modal";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   Select,
   SelectContent,
@@ -34,6 +37,9 @@ export default function Page() {
     {} as ComponentType,
   );
   const [selectedValue, setSelectedValue] = useState("cpu");
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [answer, setAnswer] = useState("");
 
   const handleSubmitComponents = async (
     event: React.FormEvent<HTMLFormElement>,
@@ -41,10 +47,14 @@ export default function Page() {
     event.preventDefault();
     try {
       const response = await API.sendComponents(selectedComponents);
-      console.log(response);
+      setAnswer(response.result);
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleOptionClick = (option: string) => {
+    setSelectedOption(option);
   };
 
   const handleGoToComponentSelected = (step: number) => {
@@ -72,6 +82,11 @@ export default function Page() {
     setSelectedValue(value);
     const index = Object.keys(COMPONENTS).indexOf(value);
     handleGoToComponentSelected(index);
+  };
+
+  const handleCloseModal = () => {
+    setAnswer("");
+    setOpenModal(!openModal);
   };
 
   return (
@@ -121,9 +136,84 @@ export default function Page() {
                 </p>
               )}
             </div>
+            <Modal isOpen={openModal} onClose={handleCloseModal}>
+              <div className="timeline">
+                <p className="text-white mt-5 pt-5 pr-4 max-w-4xl">
+                  {answer ? (
+                    <span>{answer}</span>
+                  ) : (
+                    <div className="flex flex-col gap-2">
+                      <Skeleton className="w-1/2 h-[10px]" />
+                      <Skeleton className="w-10/12 h-[10px]" />
+                      <Skeleton className="w-full h-[10px]" />
+                    </div>
+                  )}
+                </p>
+                {answer && (
+                  <div className="pl-5">
+                    {selectedOption === null && (
+                      <>
+                        <div>
+                          <button
+                            className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]"
+                            onClick={() =>
+                              handleOptionClick("Que componentes recomiendas?")
+                            }
+                          >
+                            Que componentes recomiendas?
+                          </button>
+                          <button
+                            className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]"
+                            onClick={() =>
+                              handleOptionClick(
+                                "Que pasaria si la ensamblo como esta?",
+                              )
+                            }
+                          >
+                            Que pasaria si la ensamblo como esta?
+                          </button>
+                          <button
+                            className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]"
+                            onClick={() =>
+                              handleOptionClick("Que componentes recomiendas?")
+                            }
+                          >
+                            Que componentes recomiendas?
+                          </button>
+                        </div>
+                        <div className="flex w-full max-w-sm items-center space-x-2">
+                          <Input
+                            className="m-1 w-[500px] bg-transparent border-[#B94CED] text-white"
+                            placeholder="Tienes una pregunta? escribela!"
+                          />
+                          <Button
+                            type="submit"
+                            className="bg-[#B94CED] hover:bg-[#B94CED]"
+                          >
+                            Enviar
+                          </Button>
+                        </div>
+                      </>
+                    )}
+                    {selectedOption && (
+                      <button className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 bg-[#B94CED]">
+                        {selectedOption}
+                      </button>
+                    )}
+                  </div>
+                )}
+              </div>
+              {/* <button
+                onClick={() => setOpenModal(!openModal)}
+                className="mt-4 p-2 bg-[#B94CED] text-white rounded hover:bg-blue-600"
+              >
+                Cerrar
+              </button> */}
+            </Modal>
             <div className="flex justify-center w-full my-2">
               <Button
                 disabled={!checkAllComponentsExist(selectedComponents)}
+                onClick={() => setOpenModal(!openModal)}
                 className="bg-[#B94CED] truncate md:w-full mx-2 hover:bg-[#b065d2]"
               >
                 Analizar compatibilidad de mis componentes
