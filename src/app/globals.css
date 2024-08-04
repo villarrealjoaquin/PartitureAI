@@ -46,48 +46,6 @@ body {
   -webkit-filter: blur(80px);
 }
 
-
-.gradient-background-list-items {
-  position: relative;
-  width: 100%;
-  z-index: 2;
-  overflow: hidden;
-}
-
-.gradient-background-list-items::before {
-  content: "";
-  position: absolute;
-  top: 90%;
-  right: -30%;
-  width: 50%;
-  height: 60%;
-  border-radius: 50%;
-  filter: blur(100px);
-  background: radial-gradient(circle at bottom, #b94ced, #7b61ff, #ed1846);
-  background-size: 200% 200%;
-  animation: gradient-animation 15s ease infinite;
-}
-
-.gradient-background-list-items::after {
-  content: "";
-  position: absolute;
-  top: 90%;
-  right: -30%;
-  width: 47%;
-  height: 45%;
-  border-radius: 20%;
-  filter: blur(100px);
-  background: radial-gradient(circle at right, #b94ced, #7b61ff, #ed1846);
-  background-size: 200% 200%;
-  animation: gradient-animation 7s ease infinite;
-  -webkit-border-radius: 20%;
-  -moz-border-radius: 20%;
-  -ms-border-radius: 20%;
-  -o-border-radius: 20%;
-  -webkit-animation: gradient-animation 7s ease infinite;
-  -webkit-filter: blur(80px);
-}
-
 @keyframes gradient-animation {
   0% {
     background-position: 0% 50%;

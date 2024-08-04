@@ -77,7 +77,7 @@ export default function Page() {
 
   return (
     <TooltipProvider>
-      <section className="gradient-background-list-items flex flex-col lg:flex-row gap-3">
+      <section className="flex flex-col lg:flex-row gap-3 border-b border-[#B94CED]">
         <div className="hidden w-1/2 lg:w-[700px] lg:flex lg:flex-col">
           <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 gap-3 h-[65vh] border-r border-[#B94CED] overflow-auto">
             {Object.entries(COMPONENTS).map(([key, Value], i: number) => {
@@ -102,7 +102,7 @@ export default function Page() {
           </div>
           <form
             onSubmit={handleSubmitComponents}
-            className="border-t border-r border-b border-[#B94CED] pt-2"
+            className="border-t border-r  border-[#B94CED] pt-2"
           >
             <div
               className={`grid ${Object.values(selectedComponents).length !== 0 ? "grid-cols-1 sm:grid-cols-2 gap-4" : "flex justify-center items-center"} text-[#A5A5A5] h-[135px] w-full`}
@@ -177,9 +177,9 @@ export default function Page() {
             </div>
           </form>
         </div>
-        <div className="overflow-y-auto min-h-[750px] w-[100%] lg:w-[90%]">
+        <div className="overflow-y-auto h-[780px] w-[100%] lg:w-[90%]">
           <ul
-            className="flex flex-wrap justify-center lg:justify-start  gap-4 p-4 animate-fade-in"
+            className="flex flex-wrap overflow-x-auto justify-center lg:justify-start gap-4 p-4 animate-fade-in"
             key={currentStep}
           >
             {mock[currentComponent].map((component: any) => (
@@ -191,7 +191,7 @@ export default function Page() {
                     component as Component,
                   )
                 }
-                className="flex p-4 sm:p-6 bg-[#151922] text-white border border-[#B94CED] rounded-lg w-[400px] transform transition-transform duration-300 hover:scale-105 hover:bg-[#374151] hover:shadow-lg"
+                className="flex cursor-pointer p-4 sm:p-6 bg-[#151922] text-white border border-[#B94CED] rounded-lg w-[400px] transform transition-transform duration-300 hover:scale-105 hover:bg-[#56246d] active:scale-100"
               >
                 <Image
                   src={component.image}
@@ -213,7 +213,7 @@ export default function Page() {
                       : component.price}
                   </p>
                 </div>
-                <div className="ml-auto flex items-end">
+                <div className="hidden ml-auto sm:flex items-end">
                   <CardIcon />
                 </div>
               </li>
