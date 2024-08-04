@@ -1,5 +1,5 @@
 import { generateOutput } from "@/lib/ai";
-import { formatPrompt } from "@/utils";
+import { extractPercentages, formatPrompt } from "@/utils";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function POST(req: NextRequest) {
@@ -13,7 +13,12 @@ export async function POST(req: NextRequest) {
   const result = formatPrompt(prompt);
   try {
     const { text } = await generateOutput(result);
-    return NextResponse.json({ status: "success", result: text });
+    const percentages = extractPercentages(text);
+    return NextResponse.json({
+      status: "success",
+      result: text,
+      percentages,
+    });
   } catch (error) {
     console.error("Failed to generate text: ", error);
     return NextResponse.json({ status: "error", error: error });

@@ -21,3 +21,19 @@ export const formatPrompt = (prompt: Messages) => {
   });
   return result;
 };
+
+export const extractPercentages = (text: string) => {
+  const split = text.split(/\s+/);
+  let compatibility;
+  let cuelloDeBotella;
+  for (let i = 0; i < split.length; i++) {
+    const textLower = split[i].toLowerCase();
+    if (textLower === "compatibilidad:") {
+      compatibility = split[i + 1];
+    }
+    if (textLower === "botella:") {
+      cuelloDeBotella = split[i + 1];
+    }
+  }
+  return { compatibility, cuelloDeBotella };
+};
