@@ -133,11 +133,9 @@ export default function Page() {
 
   const currentComponent = STEPS[currentStep] as ComponentValues;
 
-  console.log(selectedComponents, "selectedComponents");
-
   return (
     <TooltipProvider>
-      <section className="flex flex-col lg:flex-row gap-3 border-b border-[#B94CED]">
+      <section className="gradient-background-2 flex flex-col lg:flex-row gap-3 border-b border-[#B94CED]">
         <div className="hidden w-1/2 lg:w-[700px] lg:flex lg:flex-col">
           <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 gap-3 h-[65vh] border-r border-[#B94CED] overflow-auto">
             {Object.entries(COMPONENTS).map(([key, Value], i: number) => {
@@ -338,7 +336,7 @@ export default function Page() {
                     component as Component,
                   )
                 }
-                className="flex cursor-pointer p-4 sm:p-6 bg-[#151922] text-white border border-[#B94CED] rounded-lg w-full lg:w-full xl:w-[420px] transform transition-transform duration-300 hover:scale-105 hover:bg-[#56246d] active:scale-100"
+                className="z-10 flex cursor-pointer p-4 sm:p-6 bg-[#151922] text-white border border-[#B94CED] rounded-lg w-full lg:w-full xl:w-[420px] transform transition-transform duration-300 hover:scale-105 hover:bg-[#56246d] active:scale-100"
               >
                 <Image
                   src={component.image}
