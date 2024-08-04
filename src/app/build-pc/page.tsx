@@ -266,7 +266,7 @@ export default function Page() {
             </div>
           </form>
         </div>
-        <div className="overflow-y-auto h-[780px] w-[100%] lg:w-[90%]">
+        <div className="overflow-y-auto lg:h-[780px] w-[100%] lg:w-[90%]">
           <ul
             className="flex flex-wrap overflow-x-auto justify-center lg:justify-start gap-4 p-4 animate-fade-in"
             key={currentStep}
@@ -290,7 +290,7 @@ export default function Page() {
                   alt={component.name}
                 />
                 <div className="flex flex-col justify-between flex-grow">
-                  <h3 className="font-semibold truncate w-[200px]">
+                  <h3 className="font-semibold truncate w-[100px] sm:w-[200px]">
                     {component.name}
                   </h3>
                   <p className="text-[#B94CED] text-sm font-bold">
