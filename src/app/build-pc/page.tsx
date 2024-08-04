@@ -338,7 +338,7 @@ export default function Page() {
                     component as Component,
                   )
                 }
-                className="flex cursor-pointer p-4 sm:p-6 bg-[#151922] text-white border border-[#B94CED] rounded-lg w-[400px] transform transition-transform duration-300 hover:scale-105 hover:bg-[#56246d] active:scale-100"
+                className="flex cursor-pointer p-4 sm:p-6 bg-[#151922] text-white border border-[#B94CED] rounded-lg w-full lg:w-full xl:w-[420px] transform transition-transform duration-300 hover:scale-105 hover:bg-[#56246d] active:scale-100"
               >
                 <Image
                   src={component.image}
