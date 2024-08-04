@@ -9,6 +9,7 @@ export type Component = {
   price: number;
   image: string;
   type_component: string;
+  quantity: number;
 };
 
 export type ComponentValues =
@@ -22,6 +23,8 @@ export type ComponentValues =
   | "storage_drives";
 
 export type ComponentType = Record<ComponentValues, Component>;
+
+export type ComponentKeys = keyof ComponentType;
 
 type Message = {
   name: string;

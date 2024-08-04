@@ -19,7 +19,12 @@ import {
 } from "@/constants";
 import * as data from "@/mock/components.json";
 import { API } from "@/services";
-import type { Component, ComponentType, ComponentValues } from "@/types";
+import type {
+  Component,
+  ComponentKeys,
+  ComponentType,
+  ComponentValues,
+} from "@/types";
 import { checkAllComponentsExist } from "@/utils";
 import Image from "next/image";
 import { useState } from "react";
@@ -61,9 +66,24 @@ export default function Page() {
 
   const handleAddComponent = (key: string, component: Component) => {
     const key_component = key;
+    if (selectedComponents.hasOwnProperty(key_component)) {
+      if (key === "memory_ram") {
+        const ram = selectedComponents[key_component as ComponentKeys];
+        const quantity = ram.quantity ?? 0;
+        if (quantity >= 4) handleNextStep();
+        setSelectedComponents({
+          ...selectedComponents,
+          [components_keys[key_component]]: {
+            ...ram,
+            quantity: quantity + 1,
+          },
+        });
+      }
+      return;
+    }
     setSelectedComponents({
       ...selectedComponents,
-      [components_keys[key_component]]: component,
+      [components_keys[key_component]]: { ...component, quantity: 1 },
     });
     handleNextStep();
   };
@@ -75,7 +95,8 @@ export default function Page() {
 
   const currentComponent = STEPS[currentStep] as ComponentValues;
 
-  console.log(answer);
+  console.log(selectedComponents, "selectedComponents");
+
   return (
     <TooltipProvider>
       <section className="flex gap-3">
