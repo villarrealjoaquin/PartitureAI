@@ -26,7 +26,7 @@ import { API } from "@/services";
 import type { Component, ComponentType, ComponentValues } from "@/types";
 import { checkAllComponentsExist } from "@/utils";
 import Image from "next/image";
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function Page() {
   const [currentStep, setCurrentStep] = useState<number>(0);
@@ -48,7 +48,6 @@ export default function Page() {
   };
 
   const handleGoToComponentSelected = (step: number) => {
-    console.log(step);
     setCurrentStep(step);
   };
 
@@ -69,7 +68,7 @@ export default function Page() {
 
   const currentComponent = STEPS[currentStep] as ComponentValues;
 
-  const handleSelectChange = (value: any) => {
+  const handleSelectChange = (value: string) => {
     setSelectedValue(value);
     const index = Object.keys(COMPONENTS).indexOf(value);
     handleGoToComponentSelected(index);
