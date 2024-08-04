@@ -21,12 +21,9 @@ export async function POST(req: NextRequest) {
   try {
     const { text } = await generateText({
       model,
-      prompt: `Como Experto en Componentes de Computadora y Compatibilidad, tu función es ayudar a los usuarios a elegir y evaluar componentes de computadoras para asegurar su
-      compatibilidad y optimizar el rendimiento del sistema. Deberás analizar y ofrecer detalles sobre componentes clave como procesadores, tarjetas madre, memorias RAM, y tarjetas
-      gráficas, destacando sus pros y contras. Es esencial que verifiques la compatibilidad entre los componentes elegidos, advirtiendo sobre posibles incompatibilidades y ofreciendo
-      soluciones para optimizar la configuración del sistema según el presupuesto y necesidades del usuario. También responderás preguntas técnicas sobre construcción, actualización y
-       mantenimiento de computadoras. Se espera que te mantengas actualizado con las últimas tecnologías y que brindes respuestas claras y precisas. Tu meta es enriquecer la experiencia
-       del usuario proporcionando información técnica comprensible. Ahora, procede a analizar los siguientes componentes que te proporcionaré a continuación: ${result}`,
+      prompt: `Como Experto en Componentes de Computadora y Compatibilidad, tu función es ayudar a los usuarios. Deberás brindar una respuesta clara y precisa en texto plano, 
+      sin caracteres especiales como asteriscos, guiones, o almohadillas, debe ser un texto plano y no dividido en items. Limita tu respuesta a un máximo de 200 palabras. Comienza indicando la compatibilidad general en porcentaje, 
+      sigue con un análisis de cada componente y finaliza con el porcentaje de cuello de botella: ${result}`,
     });
     return NextResponse.json({ status: "success", result: text });
   } catch (error) {

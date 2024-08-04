@@ -82,3 +82,27 @@ body {
     animation: fade-in 0.5s ease-out;
   }
 }
+
+.timeline {
+  position: relative;
+  padding-left: 30px; 
+}
+
+.timeline p {
+  position: relative;
+  margin: 20px 0;
+  padding-left: 20px;
+}
+
+.timeline p::before {
+  content: '';
+  position: absolute;
+  left: -11px;
+  top: 50%; 
+  transform: translateY(-50%);
+  height: 15px;
+  width: 15px;
+  background: #B94CED;
+  border: 2px solid white;
+  border-radius: 50%;
+}

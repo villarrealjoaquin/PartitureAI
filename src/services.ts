@@ -12,4 +12,15 @@ export const API = {
     if (!response.ok) throw new Error("Failed to send components");
     return response.json();
   },
+  makeQuestions: async (text: string) => {
+    const response = await fetch("/api/questions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ prompt: text }),
+    });
+    if (!response.ok) throw new Error("Failed to send components");
+    return response.json();
+  },
 };
