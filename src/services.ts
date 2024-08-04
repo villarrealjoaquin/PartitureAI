@@ -1,4 +1,4 @@
-import type { Component, ComponentType } from "./types";
+import type { ComponentType } from "./types";
 
 export const API = {
   sendComponents: async (components: ComponentType) => {

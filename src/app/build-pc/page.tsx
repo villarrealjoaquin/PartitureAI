@@ -24,12 +24,35 @@ import {
   components_keys,
   STEPS,
 } from "@/constants";
-import mock from "@/mock/components.json";
+import * as data from "@/mock/components.json";
 import { API } from "@/services";
-import type { Component, ComponentType, ComponentValues } from "@/types";
+import type {
+  Component,
+  ComponentKeys,
+  ComponentType,
+  ComponentValues,
+} from "@/types";
 import { checkAllComponentsExist } from "@/utils";
 import Image from "next/image";
 import { useState } from "react";
+
+const percentageColor = (percentage: number) => {
+  console.log(percentage, "percentage");
+
+  let color: "green" | "yellow" | "red" = "green";
+  if (percentage <= 30) {
+    color = "red";
+  }
+  if (percentage <= 70) {
+    color = "yellow";
+  }
+  if (percentage > 70) {
+    color = "green";
+  }
+  console.log(color, "color");
+
+  return color;
+};
 
 export default function Page() {
   const [currentStep, setCurrentStep] = useState<number>(0);
@@ -39,6 +62,10 @@ export default function Page() {
   const [selectedValue, setSelectedValue] = useState("cpu");
   const [openModal, setOpenModal] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [percentages, setPercentages] = useState({
+    compatibility: 0,
+    cuelloDeBotella: 0,
+  });
   const [answer, setAnswer] = useState("");
 
   const handleSubmitComponents = async (
@@ -47,6 +74,8 @@ export default function Page() {
     event.preventDefault();
     try {
       const response = await API.sendComponents(selectedComponents);
+      console.log(response, "response");
+      setPercentages(response.percentages);
       setAnswer(response.result);
     } catch (error) {
       console.log(error);
@@ -69,14 +98,27 @@ export default function Page() {
 
   const handleAddComponent = (key: string, component: Component) => {
     const key_component = key;
+    if (selectedComponents.hasOwnProperty(key_component)) {
+      if (key === "memory_ram") {
+        const ram = selectedComponents[key_component as ComponentKeys];
+        const quantity = ram.quantity ?? 0;
+        if (quantity >= 4) handleNextStep();
+        setSelectedComponents({
+          ...selectedComponents,
+          [components_keys[key_component]]: {
+            ...ram,
+            quantity: quantity + 1,
+          },
+        });
+      }
+      return;
+    }
     setSelectedComponents({
       ...selectedComponents,
-      [components_keys[key_component]]: component,
+      [components_keys[key_component]]: { ...component, quantity: 1 },
     });
     handleNextStep();
   };
-
-  const currentComponent = STEPS[currentStep] as ComponentValues;
 
   const handleSelectChange = (value: string) => {
     setSelectedValue(value);
@@ -88,6 +130,10 @@ export default function Page() {
     setAnswer("");
     setOpenModal(!openModal);
   };
+
+  const currentComponent = STEPS[currentStep] as ComponentValues;
+
+  console.log(selectedComponents, "selectedComponents");
 
   return (
     <TooltipProvider>
@@ -140,7 +186,19 @@ export default function Page() {
               <div className="timeline">
                 <p className="text-white mt-5 pt-5 pr-4 max-w-4xl">
                   {answer ? (
-                    <span>{answer}</span>
+                    <>
+                      <span className="text-sm text-pretty">{answer}</span>
+                      <p
+                        className={`text-[${percentageColor(Number(percentages.compatibility))}]`}
+                      >
+                        {percentages.compatibility}
+                      </p>
+                      <p
+                        className={`text-[${percentageColor(Number(percentages.cuelloDeBotella))}]`}
+                      >
+                        {percentages.cuelloDeBotella}
+                      </p>
+                    </>
                   ) : (
                     <div className="flex flex-col gap-2">
                       <Skeleton className="w-1/2 h-[10px]" />
@@ -271,7 +329,7 @@ export default function Page() {
             className="flex flex-wrap overflow-x-auto justify-center lg:justify-start gap-4 p-4 animate-fade-in"
             key={currentStep}
           >
-            {mock[currentComponent].map((component: any) => (
+            {data[currentComponent].map((component: any) => (
               <li
                 key={component.id}
                 onClick={() =>
