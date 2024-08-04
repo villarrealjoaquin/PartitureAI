@@ -1,3 +1,5 @@
+import type { Messages } from "./types";
+
 export const checkAllComponentsExist = (components: any) => {
   const fields = [
     "cpu",
@@ -10,4 +12,12 @@ export const checkAllComponentsExist = (components: any) => {
     "storage_drives",
   ];
   return fields.every((field) => components[field]);
+};
+
+export const formatPrompt = (prompt: Messages) => {
+  let result = "";
+  Object.entries(prompt).forEach(([key, value]) => {
+    result += `${key}: ${value.name}`;
+  });
+  return result;
 };
