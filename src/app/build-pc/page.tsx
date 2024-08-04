@@ -22,7 +22,7 @@ import { API } from "@/services";
 import type { Component, ComponentType, ComponentValues } from "@/types";
 import { checkAllComponentsExist } from "@/utils";
 import Image from "next/image";
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function Page() {
   const [currentStep, setCurrentStep] = useState<number>(0);
@@ -30,8 +30,8 @@ export default function Page() {
     {} as ComponentType,
   );
   const [openModal, setOpenModal] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
-  const [answer, setAnswer] = useState<any>();
+  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [answer, setAnswer] = useState("");
 
   const handleSubmitComponents = async (
     event: React.FormEvent<HTMLFormElement>,
@@ -45,7 +45,7 @@ export default function Page() {
     }
   };
 
-  const handleOptionClick = (option: any) => {
+  const handleOptionClick = (option: string) => {
     setSelectedOption(option);
   };
 
@@ -70,6 +70,11 @@ export default function Page() {
 
   const currentComponent = STEPS[currentStep] as ComponentValues;
 
+  const handleCloseModal = () => {
+    setAnswer("");
+    setOpenModal(!openModal);
+  };
+  console.log(answer);
   return (
     <TooltipProvider>
       <section className="flex gap-3">
@@ -117,7 +122,7 @@ export default function Page() {
                 </p>
               )}
             </div>
-            <Modal isOpen={openModal} onClose={() => setOpenModal(!openModal)}>
+            <Modal isOpen={openModal} onClose={handleCloseModal}>
               <div className="timeline">
                 <p className="text-white mt-5 pt-5 pr-4 max-w-4xl">
                   {answer ? (
