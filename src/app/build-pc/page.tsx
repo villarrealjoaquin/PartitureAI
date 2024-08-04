@@ -3,6 +3,13 @@
 import { CardIcon } from "@/components/Icons";
 import { Button } from "@/components/ui/button";
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
@@ -26,6 +33,7 @@ export default function Page() {
   const [selectedComponents, setSelectedComponents] = useState<ComponentType>(
     {} as ComponentType,
   );
+  const [selectedValue, setSelectedValue] = useState("cpu");
 
   const handleSubmitComponents = async (
     event: React.FormEvent<HTMLFormElement>,
@@ -40,6 +48,7 @@ export default function Page() {
   };
 
   const handleGoToComponentSelected = (step: number) => {
+    console.log(step);
     setCurrentStep(step);
   };
 
@@ -60,10 +69,16 @@ export default function Page() {
 
   const currentComponent = STEPS[currentStep] as ComponentValues;
 
+  const handleSelectChange = (value: any) => {
+    setSelectedValue(value);
+    const index = Object.keys(COMPONENTS).indexOf(value);
+    handleGoToComponentSelected(index);
+  };
+
   return (
     <TooltipProvider>
-      <section className="flex gap-3">
-        <div className="flex flex-col w-1/2 sm:w-1/3">
+      <section className="gradient-background-list-items flex flex-col lg:flex-row gap-3">
+        <div className="hidden w-1/2 lg:w-[700px] lg:flex lg:flex-col">
           <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 gap-3 h-[65vh] border-r border-[#B94CED] overflow-auto">
             {Object.entries(COMPONENTS).map(([key, Value], i: number) => {
               const condition = key === currentComponent ? "#B94CED" : "#fff";
@@ -117,9 +132,54 @@ export default function Page() {
             </div>
           </form>
         </div>
-        <div className="overflow-y-auto min-h-[750px]">
+        <div className="flex flex-col w-full mt-5 p-4 lg:hidden">
+          <Select value={selectedValue} onValueChange={handleSelectChange}>
+            <SelectTrigger className="w-full bg-transparent border-[#B94CED] text-white">
+              <SelectValue placeholder="Componentes" />
+            </SelectTrigger>
+            <SelectContent className="bg-[#111827] border-[#B94CED] text-white">
+              {Object.entries(componentNames).map(([key, name]) => (
+                <SelectItem key={key} value={key}>
+                  {name}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <form
+            onSubmit={handleSubmitComponents}
+            className="flex flex-col flex-grow border border-[#B94CED] mt-4 rounded-lg pt-2 "
+          >
+            <div
+              className={`lg:grid ${Object.values(selectedComponents).length !== 0 ? "lg:grid-cols-2 gap-4" : "flex justify-center items-center"} text-[#A5A5A5] h-[175px] lg:h-[135px] w-full`}
+            >
+              {Object.values(selectedComponents).length !== 0 ? (
+                Object.entries(selectedComponents).map(([key, component]) => (
+                  <div key={key} className="px-2">
+                    <p className="text-sm truncate ">
+                      {key}: {component.name}
+                    </p>
+                  </div>
+                ))
+              ) : (
+                <p className="text-center max-w-[30rem]">
+                  ¡Ups! Parece que no has elegido ningún componente aún 🛠️.
+                  ¡Vamos a construir esa máquina de ensueño!
+                </p>
+              )}
+            </div>
+            <div className="flex justify-center w-full my-2">
+              <Button
+                disabled={!checkAllComponentsExist(selectedComponents)}
+                className="bg-[#B94CED] truncate w-full mx-2 hover:bg-[#b065d2]"
+              >
+                Analizar compatibilidad de mis componentes
+              </Button>
+            </div>
+          </form>
+        </div>
+        <div className="overflow-y-auto min-h-[750px] w-[100%] lg:w-[90%]">
           <ul
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4 animate-fade-in"
+            className="flex flex-wrap justify-center lg:justify-start  gap-4 p-4 animate-fade-in"
             key={currentStep}
           >
             {mock[currentComponent].map((component: any) => (
@@ -131,7 +191,7 @@ export default function Page() {
                     component as Component,
                   )
                 }
-                className="flex p-4 sm:p-6 bg-[#1f2937] text-white border border-[#B94CED] rounded-lg w-[400px] transform transition-transform duration-300 hover:scale-105 hover:bg-[#374151] hover:shadow-lg"
+                className="flex p-4 sm:p-6 bg-[#151922] text-white border border-[#B94CED] rounded-lg w-[400px] transform transition-transform duration-300 hover:scale-105 hover:bg-[#374151] hover:shadow-lg"
               >
                 <Image
                   src={component.image}
