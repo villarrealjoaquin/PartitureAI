@@ -31,7 +31,7 @@ import type {
   ComponentType,
   ComponentValues,
 } from "@/types";
-import { checkAllComponentsExist, percentageColor } from "@/utils";
+import { checkAllComponentsExist } from "@/utils";
 import { useState } from "react";
 
 export type Analysis = {
@@ -126,7 +126,7 @@ export default function Page() {
 
   return (
     <TooltipProvider>
-      <section className="flex flex-col lg:flex-row gap-3 border-b border-[#B94CED]">
+      <section className="gradient-background-2 flex flex-col lg:flex-row gap-3 border-b border-[#B94CED]">
         <div className="hidden w-1/2 lg:w-[700px] lg:flex lg:flex-col">
           <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 gap-3 h-[65vh] border-r border-[#B94CED] overflow-auto">
             {Object.entries(COMPONENTS).map(([key, Value], i: number) => {
