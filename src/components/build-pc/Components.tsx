@@ -31,7 +31,6 @@ export const Components = () => {
   const [analysis, setAnalysis] = useState<Analysis[]>([]);
   const [answer, setAnswer] = useState("");
   const [apiKey, setApiKey] = useState("");
-  const [status, setStatus] = useState<string>("error");
   const [hasApiKey, setHasApiKey] = useState(false);
 
   const handleSubmitComponents = async (
@@ -41,10 +40,8 @@ export const Components = () => {
     try {
       setHasApiKey(true);
       const response = await API.sendComponents(selectedComponents, apiKey);
-      console.log(response, "response");
       setAnalysis(response.analysis);
       setAnswer(response.result);
-      setStatus(response.status);
     } catch (error) {
       console.log(error);
     }
@@ -91,7 +88,6 @@ export const Components = () => {
       });
       return;
     }
-
     setSelectedComponents({
       ...selectedComponents,
       [components_keys[key_component]]: { ...component, quantity: 1 },
