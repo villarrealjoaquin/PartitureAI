@@ -34,7 +34,7 @@ import type {
 import { checkAllComponentsExist, percentageColor } from "@/utils";
 import { useState } from "react";
 
-type Analysis = {
+export type Analysis = {
   type: string;
   text: string;
   value: number | string;
