@@ -1,13 +1,13 @@
 import type { ComponentType } from "./types";
 
 export const API = {
-  sendComponents: async (components: ComponentType) => {
+  sendComponents: async (components: ComponentType, apiKey: string) => {
     const response = await fetch("/api/components-pc", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ prompt: components }),
+      body: JSON.stringify({ prompt: components, apiKey: apiKey }),
     });
     if (!response.ok) throw new Error("Failed to send components");
     return response.json();

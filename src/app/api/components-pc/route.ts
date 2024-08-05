@@ -3,7 +3,7 @@ import { extractData, formatPrompt } from "@/utils";
 import { NextResponse, type NextRequest } from "next/server";
 
 export async function POST(req: NextRequest) {
-  const { prompt } = await req.json();
+  const { prompt, apiKey } = await req.json();
   if (!prompt || typeof prompt !== "object") {
     return NextResponse.json(
       { status: "error", error: "Invalid prompt format" },
@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
   }
   const result = formatPrompt(prompt);
   try {
-    const { text } = await generateOutput(result);
+    const { text } = await generateOutput(result, apiKey);
     const analysis = extractData(text);
     return NextResponse.json({
       status: "success",
