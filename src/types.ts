@@ -26,6 +26,13 @@ export type ComponentType = Record<ComponentValues, Component>;
 
 export type ComponentKeys = keyof ComponentType;
 
+export type Analysis = {
+  type: string;
+  text: string;
+  value: number | string;
+  condition: boolean;
+};
+
 type Message = {
   name: string;
 };
