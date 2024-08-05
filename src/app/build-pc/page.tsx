@@ -348,7 +348,7 @@ export default function Page() {
                   alt={component.name}
                 />
                 <div className="flex flex-col justify-between flex-grow">
-                  <h3 className="font-semibold truncate w-[120px] sm:w-[200px]">
+                  <h3 className="font-semibold truncate w-[100px] sm:w-[200px]">
                     {component.name}
                   </h3>
                   <p className="text-[#B94CED] text-sm font-bold">
