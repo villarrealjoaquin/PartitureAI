@@ -154,8 +154,8 @@ export const Components = () => {
                 acceder a funcionalidades exclusivas. Por favor, introduce tu
                 <span className="text-[#B94CED] font-bold"> API KEY</span> en el
                 campo de abajo y presiona{" "}
-                <span className="text-[#B94CED] font-bold">"Ingresar"</span>{" "}
-                para continuar.
+                <span className="text-[#B94CED] font-bold">Ingresar</span> para
+                continuar.
               </p>
               <div className="w-full">
                 <Input
