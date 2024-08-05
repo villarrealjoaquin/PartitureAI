@@ -37,8 +37,6 @@ import Image from "next/image";
 import { useState } from "react";
 
 const percentageColor = (percentage: number) => {
-  console.log(percentage, "percentage");
-
   let color: "green" | "yellow" | "red" = "green";
   if (percentage <= 30) {
     color = "red";
