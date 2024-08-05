@@ -75,8 +75,8 @@ export const cardsContent = [
   },
   {
     id: 4,
-    title: "Construcción enteramente personalizada",
+    title: "Exploración de Componentes",
     descripcion:
-      "Vos podés armar tu propia PC con los componentes que más te gusten, brindándote una experiencia absolutamente individual.",
+      "Explora una variedad de componentes esenciales como CPU, GPU, RAM y más, con descripciones detalladas y análisis de compatibilidad.",
   },
 ];
