@@ -1,15 +1,14 @@
-import { ENVS } from "@/envs";
 import { createOpenAI } from "@ai-sdk/openai";
 import { generateText } from "ai";
 
-const perplexity = createOpenAI({
-  apiKey: ENVS.OPENAI_API_KEY ?? "",
-  baseURL: "https://api.perplexity.ai/",
-});
+export const generateOutput = async (data: string, apiKey: string) => {
+  const perplexity = createOpenAI({
+    apiKey,
+    baseURL: "https://api.perplexity.ai/",
+  });
 
-const model = perplexity("llama-3-sonar-large-32k-online");
+  const model = perplexity("llama-3-sonar-large-32k-online");
 
-export const generateOutput = async (data: string) => {
   return generateText({
     model,
     prompt: `
