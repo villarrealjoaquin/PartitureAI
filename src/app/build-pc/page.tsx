@@ -1,10 +1,9 @@
 "use client";
 
-import { CardIcon } from "@/components/Icons";
+import { ComponentsList } from "@/components/build-pc";
 import Modal from "@/components/Modal/Modal";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Skeleton } from "@/components/ui/skeleton";
 import {
   Select,
   SelectContent,
@@ -12,6 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Skeleton } from "@/components/ui/skeleton";
 import {
   Tooltip,
   TooltipContent,
@@ -24,7 +24,6 @@ import {
   components_keys,
   STEPS,
 } from "@/constants";
-import * as data from "@/mock/components.json";
 import { API } from "@/services";
 import type {
   Component,
@@ -32,26 +31,14 @@ import type {
   ComponentType,
   ComponentValues,
 } from "@/types";
-import { checkAllComponentsExist } from "@/utils";
-import Image from "next/image";
+import { checkAllComponentsExist, percentageColor } from "@/utils";
 import { useState } from "react";
 
-const percentageColor = (percentage: number) => {
-  console.log(percentage, "percentage");
-
-  let color: "green" | "yellow" | "red" = "green";
-  if (percentage <= 30) {
-    color = "red";
-  }
-  if (percentage <= 70) {
-    color = "yellow";
-  }
-  if (percentage > 70) {
-    color = "green";
-  }
-  console.log(color, "color");
-
-  return color;
+type Analysis = {
+  type: string;
+  text: string;
+  value: number | string;
+  condition: boolean;
 };
 
 export default function Page() {
@@ -62,10 +49,7 @@ export default function Page() {
   const [selectedValue, setSelectedValue] = useState("cpu");
   const [openModal, setOpenModal] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const [percentages, setPercentages] = useState({
-    compatibility: 0,
-    cuelloDeBotella: 0,
-  });
+  const [analysis, setAnalysis] = useState<Analysis[]>([]);
   const [answer, setAnswer] = useState("");
 
   const handleSubmitComponents = async (
@@ -75,7 +59,7 @@ export default function Page() {
     try {
       const response = await API.sendComponents(selectedComponents);
       console.log(response, "response");
-      setPercentages(response.percentages);
+      setAnalysis(response.analysis);
       setAnswer(response.result);
     } catch (error) {
       console.log(error);
@@ -98,21 +82,28 @@ export default function Page() {
 
   const handleAddComponent = (key: string, component: Component) => {
     const key_component = key;
-    if (selectedComponents.hasOwnProperty(key_component)) {
-      if (key === "memory_ram") {
-        const ram = selectedComponents[key_component as ComponentKeys];
-        const quantity = ram.quantity ?? 0;
-        if (quantity >= 4) handleNextStep();
+    // todo: refactorizar esto
+    if (key === "memory_ram") {
+      const ram = selectedComponents[key_component as ComponentKeys];
+      if (!ram) {
         setSelectedComponents({
           ...selectedComponents,
-          [components_keys[key_component]]: {
-            ...ram,
-            quantity: quantity + 1,
-          },
+          [components_keys[key_component]]: { ...component, quantity: 1 },
         });
+        return;
       }
+      const quantity = ram.quantity ?? 0;
+      if (quantity >= 4) handleNextStep();
+      setSelectedComponents({
+        ...selectedComponents,
+        [components_keys[key_component]]: {
+          ...ram,
+          quantity: quantity + 1,
+        },
+      });
       return;
     }
+
     setSelectedComponents({
       ...selectedComponents,
       [components_keys[key_component]]: { ...component, quantity: 1 },
@@ -132,8 +123,6 @@ export default function Page() {
   };
 
   const currentComponent = STEPS[currentStep] as ComponentValues;
-
-  console.log(selectedComponents, "selectedComponents");
 
   return (
     <TooltipProvider>
@@ -162,7 +151,7 @@ export default function Page() {
           </div>
           <form
             onSubmit={handleSubmitComponents}
-            className="border-t border-r  border-[#B94CED] pt-2"
+            className="border-t border-r border-[#B94CED] pt-2"
           >
             <div
               className={`grid ${Object.values(selectedComponents).length !== 0 ? "grid-cols-1 sm:grid-cols-2 gap-4" : "flex justify-center items-center"} text-[#A5A5A5] h-[135px] w-full`}
@@ -182,92 +171,6 @@ export default function Page() {
                 </p>
               )}
             </div>
-            <Modal isOpen={openModal} onClose={handleCloseModal}>
-              <div className="timeline">
-                <p className="text-white mt-5 pt-5 pr-4 max-w-4xl">
-                  {answer ? (
-                    <>
-                      <span className="text-sm text-pretty">{answer}</span>
-                      <p
-                        className={`text-[${percentageColor(Number(percentages.compatibility))}]`}
-                      >
-                        {percentages.compatibility}
-                      </p>
-                      <p
-                        className={`text-[${percentageColor(Number(percentages.cuelloDeBotella))}]`}
-                      >
-                        {percentages.cuelloDeBotella}
-                      </p>
-                    </>
-                  ) : (
-                    <div className="flex flex-col gap-2">
-                      <Skeleton className="w-1/2 h-[10px]" />
-                      <Skeleton className="w-10/12 h-[10px]" />
-                      <Skeleton className="w-full h-[10px]" />
-                    </div>
-                  )}
-                </p>
-                {answer && (
-                  <div className="pl-5">
-                    {selectedOption === null && (
-                      <>
-                        <div>
-                          <button
-                            className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]"
-                            onClick={() =>
-                              handleOptionClick("Que componentes recomiendas?")
-                            }
-                          >
-                            Que componentes recomiendas?
-                          </button>
-                          <button
-                            className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]"
-                            onClick={() =>
-                              handleOptionClick(
-                                "Que pasaria si la ensamblo como esta?",
-                              )
-                            }
-                          >
-                            Que pasaria si la ensamblo como esta?
-                          </button>
-                          <button
-                            className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]"
-                            onClick={() =>
-                              handleOptionClick("Que componentes recomiendas?")
-                            }
-                          >
-                            Que componentes recomiendas?
-                          </button>
-                        </div>
-                        <div className="flex w-full max-w-sm items-center space-x-2">
-                          <Input
-                            className="m-1 w-[500px] bg-transparent border-[#B94CED] text-white"
-                            placeholder="Tienes una pregunta? escribela!"
-                          />
-                          <Button
-                            type="submit"
-                            className="bg-[#B94CED] hover:bg-[#B94CED]"
-                          >
-                            Enviar
-                          </Button>
-                        </div>
-                      </>
-                    )}
-                    {selectedOption && (
-                      <button className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 bg-[#B94CED]">
-                        {selectedOption}
-                      </button>
-                    )}
-                  </div>
-                )}
-              </div>
-              {/* <button
-                onClick={() => setOpenModal(!openModal)}
-                className="mt-4 p-2 bg-[#B94CED] text-white rounded hover:bg-blue-600"
-              >
-                Cerrar
-              </button> */}
-            </Modal>
             <div className="flex justify-center w-full my-2">
               <Button
                 disabled={!checkAllComponentsExist(selectedComponents)}
@@ -279,6 +182,107 @@ export default function Page() {
             </div>
           </form>
         </div>
+
+        <Modal isOpen={openModal} onClose={handleCloseModal}>
+          <section className="px-6">
+            <div className="text-white m-auto mt-5 pt-5 pr-4 max-w-4xl">
+              {answer ? (
+                <div className="flex flex-col items-start gap-4 p-4 bg-gray-800 rounded-lg shadow-md">
+                  <p className="text-sm text-white mb-4">{answer}</p>
+                  <div className="flex  flex-wrap gap-4">
+                    {analysis &&
+                      analysis.map((analysis) => (
+                        <article
+                          key={analysis.type}
+                          className="flex items-center gap-4 p-2 bg-gray-700 rounded-lg"
+                        >
+                          <div className="flex items-center gap-2">
+                            <svg
+                              className="w-4 h-4 text-green-400"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M12 2L3 12h5v8h8v-8h5L12 2z" />
+                            </svg>
+                            <p className="text-sm font-semibold text-white">
+                              {analysis.text}:
+                            </p>
+                            <div className="flex items-center gap-2">
+                              <div
+                                className={`px-3 py-1 rounded-lg text-sm font-bold bg-opacity-10 bg-${analysis.condition ? "green" : "red"}-600`}
+                              >
+                                {analysis.value}
+                              </div>
+                            </div>
+                          </div>
+                        </article>
+                      ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="flex flex-col gap-2">
+                  <Skeleton className="w-1/2 h-[10px]" />
+                  <Skeleton className="w-10/12 h-[10px]" />
+                  <Skeleton className="w-full h-[10px]" />
+                </div>
+              )}
+            </div>
+            {answer && (
+              <div className="pl-5">
+                {selectedOption === null && (
+                  <>
+                    <div>
+                      <button
+                        className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]"
+                        onClick={() =>
+                          handleOptionClick("Que componentes recomiendas?")
+                        }
+                      >
+                        Que componentes recomiendas?
+                      </button>
+                      <button
+                        className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]"
+                        onClick={() =>
+                          handleOptionClick(
+                            "Que pasaria si la ensamblo como esta?",
+                          )
+                        }
+                      >
+                        Que pasaria si la ensamblo como esta?
+                      </button>
+                      <button
+                        className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]"
+                        onClick={() =>
+                          handleOptionClick("Que componentes recomiendas?")
+                        }
+                      >
+                        Que componentes recomiendas?
+                      </button>
+                    </div>
+                    <div className="flex w-full max-w-sm items-center space-x-2">
+                      <Input
+                        className="m-1 w-[500px] bg-transparent border-[#B94CED] text-white"
+                        placeholder="Tienes una pregunta? escribela!"
+                      />
+                      <Button
+                        type="submit"
+                        className="bg-[#B94CED] hover:bg-[#B94CED]"
+                      >
+                        Enviar
+                      </Button>
+                    </div>
+                  </>
+                )}
+                {selectedOption && (
+                  <button className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 bg-[#B94CED]">
+                    {selectedOption}
+                  </button>
+                )}
+              </div>
+            )}
+          </section>
+        </Modal>
+
         <div className="flex flex-col w-full mt-5 p-4 lg:hidden">
           <Select value={selectedValue} onValueChange={handleSelectChange}>
             <SelectTrigger className="w-full bg-transparent border-[#B94CED] text-white">
@@ -324,49 +328,12 @@ export default function Page() {
             </div>
           </form>
         </div>
-        <div className="overflow-y-auto lg:h-[780px] w-[100%] lg:w-[90%]">
-          <ul
-            className="flex flex-wrap overflow-x-auto justify-center lg:justify-start gap-4 p-4 animate-fade-in"
-            key={currentStep}
-          >
-            {data[currentComponent].map((component: any) => (
-              <li
-                key={component.id}
-                onClick={() =>
-                  handleAddComponent(
-                    component.type_component,
-                    component as Component,
-                  )
-                }
-                className="flex cursor-pointer p-4 sm:p-6 bg-[#151922] text-white border border-[#B94CED] rounded-lg w-[400px] transform transition-transform duration-300 hover:scale-105 hover:bg-[#56246d] active:scale-100"
-              >
-                <Image
-                  src={component.image}
-                  className="object-contain rounded-lg mr-4"
-                  width={79}
-                  height={79}
-                  alt={component.name}
-                />
-                <div className="flex flex-col justify-between flex-grow">
-                  <h3 className="font-semibold truncate w-[120px] sm:w-[200px]">
-                    {component.name}
-                  </h3>
-                  <p className="text-[#B94CED] text-sm font-bold">
-                    {component.manufacturer}
-                  </p>
-                  <p className="text-[#A5A5A5]">
-                    {component.base_clock
-                      ? component.base_clock
-                      : component.price}
-                  </p>
-                </div>
-                <div className="hidden ml-auto sm:flex items-end">
-                  <CardIcon />
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+
+        <ComponentsList
+          currentStep={currentStep}
+          currentComponent={currentComponent}
+          onAddComponent={handleAddComponent}
+        />
       </section>
     </TooltipProvider>
   );
