@@ -18,6 +18,7 @@ import { ComponentsAnalysis } from "./ComponentsAnalysis";
 import { ComponentSummary } from "./ComponentSummary";
 import { SelectStepComponent } from "./SelectStepComponent";
 import { SummaryResponsive } from "./SummaryResponsive";
+import { ComponentItem } from "./ComponentItem";
 
 export const ComponentsPC = () => {
   const [currentStep, setCurrentStep] = useState<number>(0);
@@ -153,11 +154,12 @@ export const ComponentsPC = () => {
         />
       </div>
 
-      <ComponentsList
-        currentStep={currentStep}
-        currentComponent={currentComponent}
-        onAddComponent={handleAddComponent}
-      />
+      <ComponentsList currentStep={currentStep}>
+        <ComponentItem
+          onAddComponent={handleAddComponent}
+          currentComponent={currentComponent}
+        />
+      </ComponentsList>
     </>
   );
 };

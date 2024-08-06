@@ -1,6 +1,7 @@
 export * from "./AnalysisItem";
 export * from "./ApiKeyVerify";
 export * from "./ComponenstList";
+export * from "./ComponentItem";
 export * from "./ComponentPicker";
 export * from "./ComponentSummary";
 export * from "./ComponentsAnalysis";
