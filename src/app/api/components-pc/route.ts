@@ -4,7 +4,7 @@ import { NextResponse, type NextRequest } from "next/server";
 
 export async function POST(req: NextRequest) {
   const { prompt, apiKey } = await req.json();
-  if (!prompt || typeof prompt !== "object") {
+  if (!prompt || typeof prompt !== "object" || !apiKey) {
     return NextResponse.json(
       { status: "error", error: "Invalid prompt format" },
       { status: 400 },
