@@ -7,7 +7,7 @@ export const SummaryResponsive = ({
   onOpenModal,
 }: {
   selectedComponents: ComponentType;
-  onOpenModal: (open: boolean) => void;
+  onOpenModal: () => void;
 }) => {
   return (
     <div className="flex flex-col flex-grow border border-[#B94CED] mt-4 rounded-lg pt-2 ">
@@ -33,7 +33,7 @@ export const SummaryResponsive = ({
         <Button
           disabled={!checkAllComponentsExist(selectedComponents)}
           className="bg-[#B94CED] truncate w-full mx-2 hover:bg-[#b065d2]"
-          onClick={() => onOpenModal(true)}
+          onClick={onOpenModal}
         >
           Analizar compatibilidad de mis componentes
         </Button>
