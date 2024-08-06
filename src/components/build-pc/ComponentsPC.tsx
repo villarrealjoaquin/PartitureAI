@@ -18,14 +18,15 @@ import { ComponentsAnalysis } from "./ComponentsAnalysis";
 import { ComponentSummary } from "./ComponentSummary";
 import { SelectStepComponent } from "./SelectStepComponent";
 import { SummaryResponsive } from "./SummaryResponsive";
+import { ComponentItem } from "./ComponentItem";
 
-export const Components = () => {
+export const ComponentsPC = () => {
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [selectedComponents, setSelectedComponents] = useState<ComponentType>(
     {} as ComponentType,
   );
-  const [selectedValue, setSelectedValue] = useState("cpu");
-  const [openModal, setOpenModal] = useState(false);
+  const [selectedValue, setSelectedValue] = useState<ComponentKeys>("cpu");
+  const [openModal, setOpenModal] = useState<boolean>(false);
   const [analysis, setAnalysis] = useState<Analysis[]>([]);
   const [answer, setAnswer] = useState("");
   const [apiKey, setApiKey] = useState("");
@@ -37,11 +38,10 @@ export const Components = () => {
     event: React.FormEvent<HTMLFormElement>,
   ) => {
     event.preventDefault();
+    setHasApiKey(true);
+    setIsLoading(true);
     try {
-      setHasApiKey(true);
-      setIsLoading(true);
       const response = await API.sendComponents(selectedComponents, apiKey);
-      console.log(response, "response");
       if (response.status === "error") {
         throw new Error(
           "Hubo un problema al enviar los datos. Por favor, verifica tu API KEY o intenta nuevamente más tarde.",
@@ -68,51 +68,44 @@ export const Components = () => {
     setCurrentStep(currentStep + 1);
   };
 
-  const handleAddComponent = (key: string, component: Component) => {
+  const handleAddComponent = (key: ComponentKeys, component: Component) => {
     const key_component = key;
-    // todo: refactorizar esto
-    if (key === "memory_ram") {
-      const ram = selectedComponents[key_component as ComponentKeys];
-      if (!ram) {
-        setSelectedComponents({
-          ...selectedComponents,
-          [components_keys[key_component]]: { ...component, quantity: 1 },
-        });
-        return;
-      }
-      const quantity = ram.quantity ?? 0;
-      if (quantity >= 4) handleNextStep();
-      setSelectedComponents({
-        ...selectedComponents,
-        [components_keys[key_component]]: {
-          ...ram,
-          quantity: quantity + 1,
-        },
-      });
-      return;
-    }
     setSelectedComponents({
       ...selectedComponents,
-      [components_keys[key_component]]: { ...component, quantity: 1 },
+      [components_keys[key_component]]: component,
     });
     handleNextStep();
   };
 
-  const handleOpenModal = async () => {
-    setOpenModal(!openModal);
-    if (apiKey && !openModal) {
+  const fetchAndAnalyzeComponents = async () => {
+    try {
+      setIsLoading(true);
       const response = await API.sendComponents(selectedComponents, apiKey);
       setAnalysis(response.analysis);
       setAnswer(response.result);
+    } catch (error) {
+      setError("Error fetching analysis data.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const handleCloseModal = () => {
-    setAnswer("");
+  const toggleModal = async () => {
     setOpenModal(!openModal);
+    if (apiKey && !openModal) {
+      fetchAndAnalyzeComponents();
+    }
   };
 
-  const handleSelectChange = (value: string) => {
+  const handleResetState = () => {
+    setAnswer("");
+    setOpenModal(!openModal);
+    setSelectedComponents({} as ComponentType);
+    setCurrentStep(0);
+    setAnalysis([]);
+  };
+
+  const handleSelectChange = (value: ComponentKeys) => {
     setSelectedValue(value);
     const index = Object.keys(COMPONENTS).indexOf(value);
     navigateToComponent(index);
@@ -129,11 +122,11 @@ export const Components = () => {
         />
         <ComponentSummary
           selectedComponents={selectedComponents}
-          onOpenModal={handleOpenModal}
+          onOpenModal={toggleModal}
         />
       </div>
 
-      <Modal isOpen={openModal} onClose={handleCloseModal}>
+      <Modal isOpen={openModal} onClose={handleResetState}>
         <section className="px-6 w-full">
           <ApiKeyVerify
             hasApiKey={hasApiKey}
@@ -144,7 +137,6 @@ export const Components = () => {
           <ComponentsAnalysis
             analysis={analysis}
             answer={answer}
-            hasApiKey={hasApiKey}
             error={error}
             isLoading={isLoading}
           />
@@ -158,15 +150,16 @@ export const Components = () => {
         />
         <SummaryResponsive
           selectedComponents={selectedComponents}
-          onOpenModal={handleOpenModal}
+          onOpenModal={toggleModal}
         />
       </div>
 
-      <ComponentsList
-        currentStep={currentStep}
-        currentComponent={currentComponent}
-        onAddComponent={handleAddComponent}
-      />
+      <ComponentsList currentStep={currentStep}>
+        <ComponentItem
+          onAddComponent={handleAddComponent}
+          currentComponent={currentComponent}
+        />
+      </ComponentsList>
     </>
   );
 };

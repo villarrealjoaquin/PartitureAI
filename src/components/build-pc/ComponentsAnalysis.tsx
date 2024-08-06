@@ -1,21 +1,19 @@
 import type { Analysis as AnalysisType } from "@/types";
 import { Skeleton } from "../ui/skeleton";
 import { AnalysisItem } from "./AnalysisItem";
+import { SkeletonComponent } from "./SkeletonComponent";
 
 export const ComponentsAnalysis = ({
-  hasApiKey,
   answer,
   analysis,
   error,
   isLoading,
 }: {
-  hasApiKey: boolean;
   answer: string;
   analysis: AnalysisType[];
   error: string | null;
   isLoading: boolean;
 }) => {
-  if (!hasApiKey) return null;
   if (error) {
     return (
       <div className="text-white m-auto mt-5 pt-5 pr-4 max-w-4xl">
@@ -24,13 +22,7 @@ export const ComponentsAnalysis = ({
     );
   }
   if (isLoading) {
-    return (
-      <div className="flex flex-col gap-4 text-white m-auto mt-5 pt-5 pr-4 max-w-4xl">
-        <Skeleton className="w-1/2 h-[10px]" />
-        <Skeleton className="w-10/12 h-[10px]" />
-        <Skeleton className="w-full h-[10px]" />
-      </div>
-    );
+    return <SkeletonComponent />;
   }
   return (
     <div className="text-white m-auto mt-5 pt-5 pr-4 max-w-4xl">
