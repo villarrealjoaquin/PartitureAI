@@ -6,4 +6,5 @@ export * from "./ComponentSummary";
 export * from "./ComponentsAnalysis";
 export * from "./ComponentsPC";
 export * from "./SelectStepComponent";
+export * from "./SkeletonComponent";
 export * from "./SummaryResponsive";
