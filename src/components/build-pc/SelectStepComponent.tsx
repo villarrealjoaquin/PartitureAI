@@ -6,13 +6,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import type { ComponentKeys } from "@/types";
 
 export const SelectStepComponent = ({
   selectedValue,
   onSelectChange,
 }: {
   selectedValue: string;
-  onSelectChange: (value: string) => void;
+  onSelectChange: (value: ComponentKeys) => void;
 }) => {
   return (
     <>

@@ -3,7 +3,7 @@ export * from "./ApiKeyVerify";
 export * from "./ComponenstList";
 export * from "./ComponentPicker";
 export * from "./ComponentSummary";
-export * from "./Components";
 export * from "./ComponentsAnalysis";
+export * from "./ComponentsPC";
 export * from "./SelectStepComponent";
 export * from "./SummaryResponsive";

@@ -1,5 +1,5 @@
 import * as data from "@/mock/components.json";
-import type { Component } from "@/types";
+import type { Component, ComponentKeys } from "@/types";
 import Image from "next/image";
 import { CardIcon } from "../Icons";
 
@@ -10,7 +10,7 @@ export const ComponentsList = ({
 }: {
   currentStep: number;
   currentComponent: string;
-  onAddComponent: (key: string, component: Component) => void;
+  onAddComponent: (key: ComponentKeys, component: Component) => void;
 }) => {
   return (
     <div className="overflow-y-auto lg:h-[780px] w-[100%] lg:w-[90%]">
@@ -18,7 +18,7 @@ export const ComponentsList = ({
         className="flex flex-wrap overflow-x-auto justify-center lg:justify-start gap-4 p-4 animate-fade-in"
         key={currentStep}
       >
-        {data[currentComponent as keyof typeof data].map((component: any) => (
+        {data[currentComponent as ComponentKeys].map((component: any) => (
           <li
             key={component.id}
             onClick={() =>
