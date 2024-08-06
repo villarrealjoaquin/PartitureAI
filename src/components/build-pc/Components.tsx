@@ -37,7 +37,7 @@ export const Components = () => {
   const [selectedIsHappyOption, setSelectedIsHappyOption] = useState<
     string | null
   >(null);
-  console.log("andaaa");
+
   const handleSubmitComponents = async (
     event: React.FormEvent<HTMLFormElement>,
   ) => {
