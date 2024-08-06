@@ -56,8 +56,14 @@ export const Components = () => {
     setCurrentStep(currentStep + 1);
   };
 
-  const handleOpenModal = () => {
+  const handleOpenModal = async () => {
     setOpenModal(!openModal);
+    if (apiKey && !openModal) {
+      const response = await API.sendComponents(selectedComponents, apiKey);
+      setAnalysis(response.analysis);
+      setAnswer(response.result);
+      setStatus(response.status);
+    }
   };
 
   const handleAddComponent = (key: string, component: Component) => {
@@ -192,9 +198,12 @@ export const Components = () => {
                   </div>
                 ) : (
                   <div className="flex flex-col gap-2">
-                    <Skeleton className="w-1/2 h-[10px]" />
-                    <Skeleton className="w-10/12 h-[10px]" />
-                    <Skeleton className="w-full h-[10px]" />
+                    <Skeleton className="w-7/12 h-[8px]" />
+                    <Skeleton className="w-6/12 h-[8px]" />
+                    <Skeleton className="w-5/12 h-[8px]" />
+                    <Skeleton className="w-9/12 h-[8px]" />
+                    <Skeleton className="w-3/12 h-[8px]" />
+                    <Skeleton className="w-full h-[8px]" />
                   </div>
                 )}
               </div>

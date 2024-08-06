@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TeianAI
 
-## Getting Started
+## Descripción del Proyecto
 
-First, run the development server:
+TeianAI es un proyecto diseñado para ayudar a las personas a armar su PC, brindando un análisis detallado y completo de los componentes seleccionados. Permite a los usuarios elegir los componentes de su agrado, construir la PC en su totalidad y luego, a través de un botón denominado “Analizar compatibilidad de mis componentes”, la IA brinda un análisis personalizado que incluye el cuello de botella, el rango de compatibilidad, el ruido que produciría el dispositivo, el consumo de la PC, entre otros análisis.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+La meta de TeianAI es simplificar y guiar el proceso de ensamblaje de PCs para que cumplan con los estándares esperados y funcionen de manera óptima, a través de una interfaz de usuario innovadora y amigable.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Imágenes del Proyecto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![frame 1](https://prod-files-secure.s3.us-west-2.amazonaws.com/57986d38-abf0-443f-ba9d-482341f760ea/cccbe57b-bf58-479f-9de0-1adebf623963/frame_1.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![frame 2](https://prod-files-secure.s3.us-west-2.amazonaws.com/57986d38-abf0-443f-ba9d-482341f760ea/972350eb-ad40-4781-b2c6-d770cfc00bda/frame_2.png)
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Equipo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Joaquin Villarreal
+- Santiago Muscolo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Proyecto Desplegado
 
-## Deploy on Vercel
+[TeianAI en Vercel](https://vercel-midu-fvxacqtzi-joaquinmv1s-projects.vercel.app/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Instrucciones de Configuración
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Si se desea ejecutar el proyecto de forma local en vez de usar el proyecto desplegado, en el README del proyecto están las instrucciones para poder desplegarlo.
+
+**Antes de usar el análisis, la aplicación pedirá un token de Perplexity AI propio para poder hacer uso de la aplicación.**
