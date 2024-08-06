@@ -27,15 +27,10 @@ export const Components = () => {
   );
   const [selectedValue, setSelectedValue] = useState("cpu");
   const [openModal, setOpenModal] = useState(false);
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [analysis, setAnalysis] = useState<Analysis[]>([]);
   const [answer, setAnswer] = useState("");
   const [apiKey, setApiKey] = useState("");
   const [hasApiKey, setHasApiKey] = useState(false);
-  const [isHappy, setIsHappy] = useState("");
-  const [selectedIsHappyOption, setSelectedIsHappyOption] = useState<
-    string | null
-  >(null);
 
   const handleSubmitComponents = async (
     event: React.FormEvent<HTMLFormElement>,
@@ -49,14 +44,6 @@ export const Components = () => {
     } catch (error) {
       console.log(error);
     }
-  };
-
-  const handleOptionClick = (option: string) => {
-    setSelectedOption(option);
-  };
-
-  const handleHappyOptionClick = (option: string) => {
-    setSelectedIsHappyOption(option);
   };
 
   const navigateToComponent = (step: number) => {
@@ -134,12 +121,12 @@ export const Components = () => {
           {!hasApiKey && (
             <form
               onSubmit={handleSubmitComponents}
-              className="flex flex-col gap-5  justify-center items-center w-full py-8"
+              className="flex flex-col gap-5 justify-center items-center w-full py-8"
             >
               <h2 className="text-center text-4xl font-bold text-white">
                 Ingresar API KEY 🤖
               </h2>
-              <p className="text-lg text-center text-white my-2 border border-[#B94CED] rounded-lg p-4">
+              <p className="text-center text-white my-2 border border-[#B94CED] rounded-lg p-4">
                 Bienvenido al portal de acceso de nuestra Inteligencia
                 Artificial{" "}
                 <span className="text-[#B94CED] font-bold">TeianAI</span>. Para
@@ -211,100 +198,6 @@ export const Components = () => {
                   </div>
                 )}
               </div>
-              {answer && (
-                <div className="pl-5">
-                  <div className="flex flex-col pl-4 mt-4">
-                    <div>
-                      <span className="m-1 text-white">
-                        Estas contento con tu respuesta?
-                      </span>
-                    </div>
-                    {selectedIsHappyOption === null && (
-                      <div>
-                        <button
-                          className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]"
-                          onClick={() => {
-                            handleHappyOptionClick("Si");
-                            setIsHappy("Si");
-                          }}
-                        >
-                          Si
-                        </button>
-                        <button
-                          className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]"
-                          onClick={() => {
-                            handleHappyOptionClick("No");
-                            setIsHappy("No");
-                          }}
-                        >
-                          No
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                  {selectedIsHappyOption && (
-                    <button className="ml-5 border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 bg-[#B94CED]">
-                      {selectedIsHappyOption}
-                    </button>
-                  )}
-                  {isHappy === "No" && selectedOption === null && (
-                    <>
-                      <div className="pl-4 mt-4">
-                        <div>
-                          <span className="m-1 text-white">
-                            Te sugerimos estas preguntas!
-                          </span>
-                        </div>
-                        <div className="mt-2">
-                          <button
-                            className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]"
-                            onClick={() =>
-                              handleOptionClick("Que componentes recomiendas?")
-                            }
-                          >
-                            Que componentes recomiendas?
-                          </button>
-                          <button
-                            className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]"
-                            onClick={() =>
-                              handleOptionClick(
-                                "Que pasaria si la ensamblo como esta?",
-                              )
-                            }
-                          >
-                            Que pasaria si la ensamblo como esta?
-                          </button>
-                          <button
-                            className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 hover:bg-[#B94CED]"
-                            onClick={() =>
-                              handleOptionClick("Que componentes recomiendas?")
-                            }
-                          >
-                            Que componentes recomiendas?
-                          </button>
-                        </div>
-                      </div>
-                      <div className="flex w-full max-w-sm items-center space-x-2 pl-4">
-                        <Input
-                          className="m-1 w-[500px] bg-transparent border-[#B94CED] text-white"
-                          placeholder="Tienes una pregunta? escribela!"
-                        />
-                        <Button
-                          type="submit"
-                          className="bg-[#B94CED] hover:bg-[#B94CED]"
-                        >
-                          Enviar
-                        </Button>
-                      </div>
-                    </>
-                  )}
-                  {selectedOption && (
-                    <button className="border rounded-md py-2 px-4 text-white border-[#B94CED] m-1 bg-[#B94CED]">
-                      {selectedOption}
-                    </button>
-                  )}
-                </div>
-              )}
             </>
           )}
         </section>
