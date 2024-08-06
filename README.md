@@ -8,9 +8,9 @@ La meta de TeianAI es simplificar y guiar el proceso de ensamblaje de PCs para q
 
 ## Imágenes del Proyecto
 
-![frame 1.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/57986d38-abf0-443f-ba9d-482341f760ea/cccbe57b-bf58-479f-9de0-1adebf623963/frame_1.png)
+![frame 1](![image](https://github.com/user-attachments/assets/0ab60a5c-14e4-494f-a617-61e1cd77d425))
 
-![frame 2](https://prod-files-secure.s3.us-west-2.amazonaws.com/57986d38-abf0-443f-ba9d-482341f760ea/972350eb-ad40-4781-b2c6-d770cfc00bda/frame_2.png)
+![frame 2](![image](https://github.com/user-attachments/assets/daf985a4-c122-4f52-ba63-c902f42cc57f))
 
 
 ## Equipo
