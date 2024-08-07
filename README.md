@@ -16,7 +16,7 @@ La meta de TeianAI es simplificar y guiar el proceso de ensamblaje de PCs para q
 
 ## Proyecto Desplegado
 
-[TeianAI en Vercel](https://vercel-midu-fvxacqtzi-joaquinmv1s-projects.vercel.app/)
+[TeianAI en Vercel]([https://vercel-midu-fvxacqtzi-joaquinmv1s-projects.vercel.app/](https://teian-ai.vercel.app/))
 
 ## Instrucciones de Configuración
 
