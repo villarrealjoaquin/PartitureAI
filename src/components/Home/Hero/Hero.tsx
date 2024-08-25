@@ -14,7 +14,10 @@ function Hero() {
             Descubre la gloria de construir lo que sueñas
           </span>
         </div>
-        <AnimatedButton text="empecemos" />
+        <div className="flex gap-10 flex-wrap">
+          <AnimatedButton text="Construye tu pc" route="build-pc" />
+          <AnimatedButton text="Valida tu pc" route="validate-pc" />
+        </div>
       </div>
       <div className="hidden md:block">
         <Carousel />
